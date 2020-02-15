@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		EE092C5623F5C91500B30E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE092C5523F5C91500B30E08 /* AppDelegate.swift */; };
-		EE092C5823F5C91500B30E08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE092C5723F5C91500B30E08 /* SceneDelegate.swift */; };
 		EE092C5A23F5C91500B30E08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE092C5923F5C91500B30E08 /* ViewController.swift */; };
 		EE092C5D23F5C91500B30E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE092C5B23F5C91500B30E08 /* Main.storyboard */; };
 		EE092C6023F5C91500B30E08 /* TinkoffChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE092C5E23F5C91500B30E08 /* TinkoffChat.xcdatamodeld */; };
 		EE092C6223F5C91500B30E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE092C6123F5C91500B30E08 /* Assets.xcassets */; };
 		EE092C6523F5C91500B30E08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE092C6323F5C91500B30E08 /* LaunchScreen.storyboard */; };
 		EE092C7023F5C91500B30E08 /* TinkoffChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE092C6F23F5C91500B30E08 /* TinkoffChatTests.swift */; };
+		EE092C7B23F709B400B30E08 /* PrintLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE092C7A23F709B400B30E08 /* PrintLogs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,6 @@
 /* Begin PBXFileReference section */
 		EE092C5223F5C91500B30E08 /* TinkoffChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE092C5523F5C91500B30E08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EE092C5723F5C91500B30E08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EE092C5923F5C91500B30E08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EE092C5C23F5C91500B30E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE092C5F23F5C91500B30E08 /* TinkoffChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TinkoffChat.xcdatamodel; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		EE092C6B23F5C91500B30E08 /* TinkoffChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE092C6F23F5C91500B30E08 /* TinkoffChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffChatTests.swift; sourceTree = "<group>"; };
 		EE092C7123F5C91500B30E08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE092C7A23F709B400B30E08 /* PrintLogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintLogs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				EE092C5523F5C91500B30E08 /* AppDelegate.swift */,
-				EE092C5723F5C91500B30E08 /* SceneDelegate.swift */,
 				EE092C5923F5C91500B30E08 /* ViewController.swift */,
+				EE092C7A23F709B400B30E08 /* PrintLogs.swift */,
 				EE092C5B23F5C91500B30E08 /* Main.storyboard */,
 				EE092C6123F5C91500B30E08 /* Assets.xcassets */,
 				EE092C6323F5C91500B30E08 /* LaunchScreen.storyboard */,
@@ -203,10 +203,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE092C7B23F709B400B30E08 /* PrintLogs.swift in Sources */,
 				EE092C5A23F5C91500B30E08 /* ViewController.swift in Sources */,
 				EE092C6023F5C91500B30E08 /* TinkoffChat.xcdatamodeld in Sources */,
 				EE092C5623F5C91500B30E08 /* AppDelegate.swift in Sources */,
-				EE092C5823F5C91500B30E08 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,14 +369,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DT65SS5ZB;
 				INFOPLIST_FILE = TinkoffChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-D SHOW_LOGS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ArtemEmelianov.TinkoffChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -387,6 +390,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DT65SS5ZB;
 				INFOPLIST_FILE = TinkoffChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,7 +398,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ArtemEmelianov.TinkoffChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
