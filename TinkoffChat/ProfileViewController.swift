@@ -13,16 +13,8 @@ class ProfileViewController: UIViewController {
     var imageIsChanged = false
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var profileImage: UIImageView! {
-        didSet {
-            profileImage.layer.cornerRadius = 40
-        }
-    }
-    @IBOutlet weak var addPhotoButton: UIButton! {
-        didSet {
-            addPhotoButton.layer.cornerRadius = 40
-        }
-    }
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var addPhotoButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var editButton: UIButton! {
         didSet {
@@ -43,6 +35,11 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         printFrame()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        profileImage.layer.cornerRadius = addPhotoButton.bounds.size.width / 2
+        addPhotoButton.layer.cornerRadius = addPhotoButton.bounds.size.width / 2
     }
     
     override func viewDidAppear(_ animated: Bool) {

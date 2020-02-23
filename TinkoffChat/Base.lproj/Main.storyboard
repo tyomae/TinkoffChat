@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -13,21 +13,20 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="TinkoffChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-user" translatesAutoresizingMaskIntoConstraints="NO" id="sV8-My-l5N">
-                                <rect key="frame" x="16" y="16" width="288" height="288"/>
+                                <rect key="frame" x="16" y="60" width="382" height="382"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sV8-My-l5N" secondAttribute="height" multiplier="1:1" id="3zA-30-t71"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfZ-gq-GPq">
-                                <rect key="frame" x="224" y="224" width="80" height="80"/>
+                                <rect key="frame" x="292" y="336" width="106" height="106"/>
                                 <color key="backgroundColor" red="0.24705882352941178" green="0.47058823529411764" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="TdW-rK-nsz"/>
-                                    <constraint firstAttribute="width" secondItem="wfZ-gq-GPq" secondAttribute="height" multiplier="1:1" id="e6o-GA-K40"/>
+                                    <constraint firstAttribute="width" secondItem="wfZ-gq-GPq" secondAttribute="height" multiplier="1:1" id="ZSo-81-C5r"/>
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
                                 <state key="normal" image="slr-camera-2-xxl"/>
@@ -41,13 +40,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александр Федоров" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcO-0i-Uqj">
-                                <rect key="frame" x="16" y="314" width="288" height="32.5"/>
+                                <rect key="frame" x="16" y="452" width="382" height="32.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0f-gh-KCM">
-                                <rect key="frame" x="16" y="362.5" width="288" height="54"/>
+                                <rect key="frame" x="16" y="500.5" width="382" height="54"/>
                                 <string key="text">👨‍💻Люблю программировать под iOS 
 👨‍🎓Изучать новые технологии
 👨‍🏫Помогаю развиваться другим </string>
@@ -56,7 +55,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvq-AV-ygb">
-                                <rect key="frame" x="20" y="508" width="280" height="40"/>
+                                <rect key="frame" x="20" y="802" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="lts-3q-LaY"/>
                                 </constraints>
@@ -77,6 +76,7 @@
                             <constraint firstItem="sV8-My-l5N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Pdd-y3-biv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sV8-My-l5N" secondAttribute="trailing" constant="16" id="Qho-dK-m8h"/>
                             <constraint firstItem="wvq-AV-ygb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SR1-pF-UKU"/>
+                            <constraint firstItem="wfZ-gq-GPq" firstAttribute="width" secondItem="sV8-My-l5N" secondAttribute="width" multiplier="0.277778" id="UBc-O3-QnX"/>
                             <constraint firstItem="M0f-gh-KCM" firstAttribute="top" secondItem="EcO-0i-Uqj" secondAttribute="bottom" constant="16" id="Uv6-QO-rTa"/>
                             <constraint firstItem="wfZ-gq-GPq" firstAttribute="bottom" secondItem="sV8-My-l5N" secondAttribute="bottom" id="YK3-cT-UXB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M0f-gh-KCM" secondAttribute="trailing" constant="16" id="bQc-Bd-plt"/>
