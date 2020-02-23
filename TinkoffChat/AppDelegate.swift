@@ -15,29 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        print("Not running application moved to Foreground: \(#function)")
         return true
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        print("Application moved from Inactive to Active: \(#function)")
-    }
-    
-    func applicationWillResignActive(_ application: UIApplication) {
-        print("Application moved from Active to InActive: \(#function)")
-    }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        print("Application moved from InActive to Background: \(#function)")
-    }
-    
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        print("Application moved from Background to Foreground: \(#function)")
-    }
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        print("Application suspended: \(#function)")
     }
     
     // MARK: - Core Data stack
