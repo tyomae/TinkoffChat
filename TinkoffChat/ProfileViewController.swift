@@ -33,15 +33,15 @@ class ProfileViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-           super.init(coder: coder)
+        super.init(coder: coder)
         
-         //   printFrame()
-         //  Приложение упало, при вызове printFrame() в init, так как идет обращение к editButton, которая в данный момент nil, так как view контроллера еще не загружена
-       }
+        //   printFrame()
+        //  Приложение упало, при вызове printFrame() в init, так как идет обращение к editButton, которая в данный момент nil, так как view контроллера еще не загружена
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         printFrame()
     }
     
