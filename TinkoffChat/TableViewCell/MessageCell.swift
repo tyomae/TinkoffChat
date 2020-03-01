@@ -17,8 +17,8 @@ class MessageCell: UITableViewCell, ConfigurableView {
         }
     }
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var rightBackgroundConstraint: NSLayoutConstraint!
-    @IBOutlet weak var leftBackgroundConstaint: NSLayoutConstraint!
+    @IBOutlet var rightBackgroundConstraint: NSLayoutConstraint!
+    @IBOutlet var leftBackgroundConstaint: NSLayoutConstraint!
     
     
     func configure(with model: MessageCellModel) {
