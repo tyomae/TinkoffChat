@@ -14,7 +14,15 @@
 		EE092C6223F5C91500B30E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE092C6123F5C91500B30E08 /* Assets.xcassets */; };
 		EE092C6523F5C91500B30E08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE092C6323F5C91500B30E08 /* LaunchScreen.storyboard */; };
 		EE092C7023F5C91500B30E08 /* TinkoffChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE092C6F23F5C91500B30E08 /* TinkoffChatTests.swift */; };
-		EE092C7B23F709B400B30E08 /* PrintLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE092C7A23F709B400B30E08 /* PrintLogs.swift */; };
+		EE23AB852407F9A900301505 /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE23AB842407F9A900301505 /* ConversationsListViewController.swift */; };
+		EE23AB882407FEA400301505 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE23AB862407FEA400301505 /* ConversationCell.swift */; };
+		EE23AB892407FEA400301505 /* ConversationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE23AB872407FEA400301505 /* ConversationCell.xib */; };
+		EE23AB8B24080F0E00301505 /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE23AB8A24080F0E00301505 /* ConfigurableView.swift */; };
+		EE23AB8D24080F9100301505 /* ConfigurationCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE23AB8C24080F9100301505 /* ConfigurationCellModel.swift */; };
+		EE23AB8F24081AFC00301505 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE23AB8E24081AFC00301505 /* ConversationViewController.swift */; };
+		EE23AB932408444D00301505 /* MessageCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE23AB922408444D00301505 /* MessageCellModel.swift */; };
+		EE23AB9A240846A000301505 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE23AB98240846A000301505 /* MessageCell.swift */; };
+		EE23AB9B240846A000301505 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE23AB99240846A000301505 /* MessageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +47,15 @@
 		EE092C6B23F5C91500B30E08 /* TinkoffChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE092C6F23F5C91500B30E08 /* TinkoffChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffChatTests.swift; sourceTree = "<group>"; };
 		EE092C7123F5C91500B30E08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE092C7A23F709B400B30E08 /* PrintLogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintLogs.swift; sourceTree = "<group>"; };
+		EE23AB842407F9A900301505 /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
+		EE23AB862407FEA400301505 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		EE23AB872407FEA400301505 /* ConversationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConversationCell.xib; sourceTree = "<group>"; };
+		EE23AB8A24080F0E00301505 /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
+		EE23AB8C24080F9100301505 /* ConfigurationCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationCellModel.swift; sourceTree = "<group>"; };
+		EE23AB8E24081AFC00301505 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		EE23AB922408444D00301505 /* MessageCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellModel.swift; sourceTree = "<group>"; };
+		EE23AB98240846A000301505 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		EE23AB99240846A000301505 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,12 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				EE092C5523F5C91500B30E08 /* AppDelegate.swift */,
-				EE092C5923F5C91500B30E08 /* ProfileViewController.swift */,
-				EE092C7A23F709B400B30E08 /* PrintLogs.swift */,
-				EE092C5B23F5C91500B30E08 /* Main.storyboard */,
-				EE092C6123F5C91500B30E08 /* Assets.xcassets */,
-				EE092C6323F5C91500B30E08 /* LaunchScreen.storyboard */,
-				EE092C6623F5C91500B30E08 /* Info.plist */,
+				EEC1D78E240BD4A600CA961E /* Resources */,
+				EEC1D78B240BD42900CA961E /* ViewControllers */,
+				EEC1D78D240BD47600CA961E /* TableViewCell */,
+				EEC1D78C240BD44B00CA961E /* Models */,
+				EEC1D793240BD61700CA961E /* Protocols */,
 				EE092C5E23F5C91500B30E08 /* TinkoffChat.xcdatamodeld */,
 			);
 			path = TinkoffChat;
@@ -100,6 +115,55 @@
 				EE092C7123F5C91500B30E08 /* Info.plist */,
 			);
 			path = TinkoffChatTests;
+			sourceTree = "<group>";
+		};
+		EEC1D78B240BD42900CA961E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EE092C5923F5C91500B30E08 /* ProfileViewController.swift */,
+				EE23AB8E24081AFC00301505 /* ConversationViewController.swift */,
+				EE23AB842407F9A900301505 /* ConversationsListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EEC1D78C240BD44B00CA961E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EE23AB8C24080F9100301505 /* ConfigurationCellModel.swift */,
+				EE23AB922408444D00301505 /* MessageCellModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EEC1D78D240BD47600CA961E /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EE23AB862407FEA400301505 /* ConversationCell.swift */,
+				EE23AB872407FEA400301505 /* ConversationCell.xib */,
+				EE23AB98240846A000301505 /* MessageCell.swift */,
+				EE23AB99240846A000301505 /* MessageCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		EEC1D78E240BD4A600CA961E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE092C6623F5C91500B30E08 /* Info.plist */,
+				EE092C5B23F5C91500B30E08 /* Main.storyboard */,
+				EE092C6123F5C91500B30E08 /* Assets.xcassets */,
+				EE092C6323F5C91500B30E08 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EEC1D793240BD61700CA961E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EE23AB8A24080F0E00301505 /* ConfigurableView.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +247,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE23AB892407FEA400301505 /* ConversationCell.xib in Resources */,
+				EE23AB9B240846A000301505 /* MessageCell.xib in Resources */,
 				EE092C6523F5C91500B30E08 /* LaunchScreen.storyboard in Resources */,
 				EE092C6223F5C91500B30E08 /* Assets.xcassets in Resources */,
 				EE092C5D23F5C91500B30E08 /* Main.storyboard in Resources */,
@@ -203,8 +269,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE092C7B23F709B400B30E08 /* PrintLogs.swift in Sources */,
+				EE23AB8D24080F9100301505 /* ConfigurationCellModel.swift in Sources */,
+				EE23AB8F24081AFC00301505 /* ConversationViewController.swift in Sources */,
+				EE23AB852407F9A900301505 /* ConversationsListViewController.swift in Sources */,
+				EE23AB882407FEA400301505 /* ConversationCell.swift in Sources */,
+				EE23AB9A240846A000301505 /* MessageCell.swift in Sources */,
 				EE092C5A23F5C91500B30E08 /* ProfileViewController.swift in Sources */,
+				EE23AB8B24080F0E00301505 /* ConfigurableView.swift in Sources */,
+				EE23AB932408444D00301505 /* MessageCellModel.swift in Sources */,
 				EE092C6023F5C91500B30E08 /* TinkoffChat.xcdatamodeld in Sources */,
 				EE092C5623F5C91500B30E08 /* AppDelegate.swift in Sources */,
 			);
@@ -368,13 +440,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DT65SS5ZB;
-				INFOPLIST_FILE = TinkoffChat/Info.plist;
+				INFOPLIST_FILE = TinkoffChat/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "-D SHOW_LOGS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ArtemEmelianov.TinkoffChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -389,7 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DT65SS5ZB;
-				INFOPLIST_FILE = TinkoffChat/Info.plist;
+				INFOPLIST_FILE = TinkoffChat/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
