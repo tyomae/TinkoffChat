@@ -23,6 +23,11 @@
 		EE23AB932408444D00301505 /* MessageCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE23AB922408444D00301505 /* MessageCellModel.swift */; };
 		EE23AB9A240846A000301505 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE23AB98240846A000301505 /* MessageCell.swift */; };
 		EE23AB9B240846A000301505 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE23AB99240846A000301505 /* MessageCell.xib */; };
+		EEC1D7952411138900CA961E /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1D7942411138900CA961E /* Hello.swift */; };
+		EEC1D79F2411174000CA961E /* TinkoffChat_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = EEC1D79D2411174000CA961E /* TinkoffChat_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EEC1D7A22411174000CA961E /* TinkoffChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEC1D79B2411174000CA961E /* TinkoffChat.framework */; };
+		EEC1D7A32411174000CA961E /* TinkoffChat.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EEC1D79B2411174000CA961E /* TinkoffChat.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EEC1D7A8241117E000CA961E /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1D7942411138900CA961E /* Hello.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +38,28 @@
 			remoteGlobalIDString = EE092C5123F5C91500B30E08;
 			remoteInfo = TinkoffChat;
 		};
+		EEC1D7A02411174000CA961E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE092C4A23F5C91500B30E08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEC1D79A2411174000CA961E;
+			remoteInfo = "TinkoffChat-iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EEC1D7A42411174000CA961E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EEC1D7A32411174000CA961E /* TinkoffChat.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EE092C5223F5C91500B30E08 /* TinkoffChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +82,10 @@
 		EE23AB922408444D00301505 /* MessageCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellModel.swift; sourceTree = "<group>"; };
 		EE23AB98240846A000301505 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		EE23AB99240846A000301505 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		EEC1D7942411138900CA961E /* Hello.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hello.swift; sourceTree = "<group>"; };
+		EEC1D79B2411174000CA961E /* TinkoffChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinkoffChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEC1D79D2411174000CA961E /* TinkoffChat_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TinkoffChat_iOS.h; sourceTree = "<group>"; };
+		EEC1D79E2411174000CA961E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +93,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEC1D7A22411174000CA961E /* TinkoffChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EE092C6823F5C91500B30E08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC1D7982411174000CA961E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -81,6 +119,7 @@
 			children = (
 				EE092C5423F5C91500B30E08 /* TinkoffChat */,
 				EE092C6E23F5C91500B30E08 /* TinkoffChatTests */,
+				EEC1D79C2411174000CA961E /* TinkoffChat-iOS */,
 				EE092C5323F5C91500B30E08 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +129,7 @@
 			children = (
 				EE092C5223F5C91500B30E08 /* TinkoffChat.app */,
 				EE092C6B23F5C91500B30E08 /* TinkoffChatTests.xctest */,
+				EEC1D79B2411174000CA961E /* TinkoffChat.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				EE092C5523F5C91500B30E08 /* AppDelegate.swift */,
+				EEC1D7942411138900CA961E /* Hello.swift */,
 				EEC1D78E240BD4A600CA961E /* Resources */,
 				EEC1D78B240BD42900CA961E /* ViewControllers */,
 				EEC1D78D240BD47600CA961E /* TableViewCell */,
@@ -166,7 +207,27 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		EEC1D79C2411174000CA961E /* TinkoffChat-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EEC1D79D2411174000CA961E /* TinkoffChat_iOS.h */,
+				EEC1D79E2411174000CA961E /* Info.plist */,
+			);
+			path = "TinkoffChat-iOS";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EEC1D7962411174000CA961E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC1D79F2411174000CA961E /* TinkoffChat_iOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		EE092C5123F5C91500B30E08 /* TinkoffChat */ = {
@@ -176,10 +237,12 @@
 				EE092C4E23F5C91500B30E08 /* Sources */,
 				EE092C4F23F5C91500B30E08 /* Frameworks */,
 				EE092C5023F5C91500B30E08 /* Resources */,
+				EEC1D7A42411174000CA961E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EEC1D7A12411174000CA961E /* PBXTargetDependency */,
 			);
 			name = TinkoffChat;
 			productName = TinkoffChat;
@@ -204,6 +267,24 @@
 			productReference = EE092C6B23F5C91500B30E08 /* TinkoffChatTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		EEC1D79A2411174000CA961E /* TinkoffChat-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEC1D7A72411174000CA961E /* Build configuration list for PBXNativeTarget "TinkoffChat-iOS" */;
+			buildPhases = (
+				EEC1D7962411174000CA961E /* Headers */,
+				EEC1D7972411174000CA961E /* Sources */,
+				EEC1D7982411174000CA961E /* Frameworks */,
+				EEC1D7992411174000CA961E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TinkoffChat-iOS";
+			productName = "TinkoffChat-iOS";
+			productReference = EEC1D79B2411174000CA961E /* TinkoffChat.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -220,6 +301,9 @@
 					EE092C6A23F5C91500B30E08 = {
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = EE092C5123F5C91500B30E08;
+					};
+					EEC1D79A2411174000CA961E = {
+						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
@@ -238,6 +322,7 @@
 			targets = (
 				EE092C5123F5C91500B30E08 /* TinkoffChat */,
 				EE092C6A23F5C91500B30E08 /* TinkoffChatTests */,
+				EEC1D79A2411174000CA961E /* TinkoffChat-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -262,6 +347,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EEC1D7992411174000CA961E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -278,6 +370,7 @@
 				EE23AB8B24080F0E00301505 /* ConfigurableView.swift in Sources */,
 				EE23AB932408444D00301505 /* MessageCellModel.swift in Sources */,
 				EE092C6023F5C91500B30E08 /* TinkoffChat.xcdatamodeld in Sources */,
+				EEC1D7952411138900CA961E /* Hello.swift in Sources */,
 				EE092C5623F5C91500B30E08 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +383,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EEC1D7972411174000CA961E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC1D7A8241117E000CA961E /* Hello.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -297,6 +398,11 @@
 			isa = PBXTargetDependency;
 			target = EE092C5123F5C91500B30E08 /* TinkoffChat */;
 			targetProxy = EE092C6C23F5C91500B30E08 /* PBXContainerItemProxy */;
+		};
+		EEC1D7A12411174000CA961E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEC1D79A2411174000CA961E /* TinkoffChat-iOS */;
+			targetProxy = EEC1D7A02411174000CA961E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -437,6 +543,7 @@
 		EE092C7523F5C91500B30E08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DT65SS5ZB;
@@ -457,6 +564,7 @@
 		EE092C7623F5C91500B30E08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DT65SS5ZB;
@@ -517,6 +625,60 @@
 			};
 			name = Release;
 		};
+		EEC1D7A52411174000CA961E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9DT65SS5ZB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TinkoffChat-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ArtemEmelianov.TinkoffChat-iOS";
+				PRODUCT_NAME = TinkoffChat;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EEC1D7A62411174000CA961E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9DT65SS5ZB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TinkoffChat-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ArtemEmelianov.TinkoffChat-iOS";
+				PRODUCT_NAME = TinkoffChat;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -543,6 +705,15 @@
 			buildConfigurations = (
 				EE092C7823F5C91500B30E08 /* Debug */,
 				EE092C7923F5C91500B30E08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEC1D7A72411174000CA961E /* Build configuration list for PBXNativeTarget "TinkoffChat-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEC1D7A52411174000CA961E /* Debug */,
+				EEC1D7A62411174000CA961E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
