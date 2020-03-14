@@ -118,21 +118,6 @@
                                     <action selector="addPhotoButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Km6-R5-sYn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artem Emelianov" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcO-0i-Uqj">
-                                <rect key="frame" x="16" y="370" width="288" height="32.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0f-gh-KCM">
-                                <rect key="frame" x="16" y="418.5" width="288" height="54"/>
-                                <string key="text">👨‍💻24 year old development engineer
-📩 dom1nuk@yandex.ru
-</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvq-AV-ygb">
                                 <rect key="frame" x="20" y="488" width="280" height="40"/>
                                 <constraints>
@@ -144,26 +129,68 @@
                                 </state>
                                 <connections>
                                     <action selector="editButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="830-nH-4oG"/>
+                                    <action selector="editButtonToched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gsR-SU-GHI"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sBD-Ha-Y7I">
+                                <rect key="frame" x="16" y="370" width="288" height="31.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="About me " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1Id-Th-Aqw">
+                                <rect key="frame" x="16" y="411.5" width="288" height="66.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5I-T9-0Ah">
+                                <rect key="frame" x="232" y="493" width="68" height="30"/>
+                                <state key="normal" title="Operation">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="operationSaveButtonToched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vz9-57-vgx"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8Sv-cV-AGp">
+                                <rect key="frame" x="141.5" y="255.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwZ-KH-Ao1">
+                                <rect key="frame" x="20" y="493" width="33" height="30"/>
+                                <state key="normal" title="GCD">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="gcdSaveButtonToched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p23-45-lUG"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wvq-AV-ygb" secondAttribute="trailing" constant="20" id="0Uh-V4-DPx"/>
-                            <constraint firstItem="EcO-0i-Uqj" firstAttribute="top" secondItem="sV8-My-l5N" secondAttribute="bottom" constant="10" id="6c9-74-YUA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wvq-AV-ygb" secondAttribute="bottom" constant="20" id="8SU-P8-v7F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BwZ-KH-Ao1" secondAttribute="bottom" constant="25" id="FFJ-Kx-lhB"/>
+                            <constraint firstItem="1Id-Th-Aqw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FMg-VK-NsY"/>
+                            <constraint firstItem="1Id-Th-Aqw" firstAttribute="top" secondItem="sBD-Ha-Y7I" secondAttribute="bottom" constant="10" id="LVW-dj-KLr"/>
+                            <constraint firstItem="8Sv-cV-AGp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mfv-n5-kSR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sBD-Ha-Y7I" secondAttribute="trailing" constant="16" id="Ofs-Vm-Z40"/>
                             <constraint firstItem="sV8-My-l5N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Pdd-y3-biv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sV8-My-l5N" secondAttribute="trailing" constant="16" id="Qho-dK-m8h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o5I-T9-0Ah" secondAttribute="bottom" constant="25" id="RJy-7B-g9G"/>
                             <constraint firstItem="wvq-AV-ygb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SR1-pF-UKU"/>
+                            <constraint firstItem="BwZ-KH-Ao1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SdG-qo-Yw1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o5I-T9-0Ah" secondAttribute="trailing" constant="20" id="TnC-dS-Seg"/>
                             <constraint firstItem="wfZ-gq-GPq" firstAttribute="width" secondItem="sV8-My-l5N" secondAttribute="width" multiplier="0.277778" id="UBc-O3-QnX"/>
-                            <constraint firstItem="M0f-gh-KCM" firstAttribute="top" secondItem="EcO-0i-Uqj" secondAttribute="bottom" constant="16" id="Uv6-QO-rTa"/>
                             <constraint firstItem="wfZ-gq-GPq" firstAttribute="bottom" secondItem="sV8-My-l5N" secondAttribute="bottom" id="YK3-cT-UXB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M0f-gh-KCM" secondAttribute="trailing" constant="16" id="bQc-Bd-plt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EcO-0i-Uqj" secondAttribute="trailing" constant="16" id="d5p-d2-JPa"/>
+                            <constraint firstItem="sBD-Ha-Y7I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fHr-LI-6S4"/>
                             <constraint firstItem="wfZ-gq-GPq" firstAttribute="trailing" secondItem="sV8-My-l5N" secondAttribute="trailing" id="gdA-FV-Hxr"/>
-                            <constraint firstItem="EcO-0i-Uqj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="guU-zg-va3"/>
-                            <constraint firstItem="M0f-gh-KCM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="o8U-vY-rlh"/>
+                            <constraint firstItem="o5I-T9-0Ah" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BwZ-KH-Ao1" secondAttribute="trailing" constant="8" symbolic="YES" id="gdb-OC-9o2"/>
+                            <constraint firstItem="sBD-Ha-Y7I" firstAttribute="top" secondItem="sV8-My-l5N" secondAttribute="bottom" constant="10" id="jFZ-B6-YlK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Id-Th-Aqw" secondAttribute="trailing" constant="16" id="nyJ-kr-aR3"/>
                             <constraint firstItem="sV8-My-l5N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="v45-mu-85W"/>
+                            <constraint firstItem="8Sv-cV-AGp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="w9G-jO-tH1"/>
+                            <constraint firstItem="wvq-AV-ygb" firstAttribute="top" secondItem="1Id-Th-Aqw" secondAttribute="bottom" constant="10" id="znM-6j-kip"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -177,10 +204,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addPhotoButton" destination="wfZ-gq-GPq" id="Yr3-xE-kKw"/>
-                        <outlet property="descriptionLabel" destination="M0f-gh-KCM" id="0rV-u9-gBz"/>
+                        <outlet property="descriptionTextView" destination="1Id-Th-Aqw" id="OZf-rL-UKC"/>
                         <outlet property="editButton" destination="wvq-AV-ygb" id="H7i-MM-CDF"/>
-                        <outlet property="nameLabel" destination="EcO-0i-Uqj" id="nBf-Xo-T4I"/>
+                        <outlet property="gcdSaveButton" destination="BwZ-KH-Ao1" id="r9y-zH-Rab"/>
+                        <outlet property="nameTextField" destination="sBD-Ha-Y7I" id="rb7-nf-tdr"/>
+                        <outlet property="operationSaveButton" destination="o5I-T9-0Ah" id="mne-pY-vi8"/>
                         <outlet property="profileImage" destination="sV8-My-l5N" id="0Gn-CE-5oT"/>
+                        <outlet property="savingDataActivityIndicator" destination="8Sv-cV-AGp" id="Yjb-dC-pkk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

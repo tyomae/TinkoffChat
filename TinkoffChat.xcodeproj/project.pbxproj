@@ -23,11 +23,13 @@
 		EE23AB932408444D00301505 /* MessageCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE23AB922408444D00301505 /* MessageCellModel.swift */; };
 		EE23AB9A240846A000301505 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE23AB98240846A000301505 /* MessageCell.swift */; };
 		EE23AB9B240846A000301505 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE23AB99240846A000301505 /* MessageCell.xib */; };
-		EEC1D7952411138900CA961E /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1D7942411138900CA961E /* Hello.swift */; };
 		EEC1D79F2411174000CA961E /* TinkoffChat_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = EEC1D79D2411174000CA961E /* TinkoffChat_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEC1D7A22411174000CA961E /* TinkoffChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEC1D79B2411174000CA961E /* TinkoffChat.framework */; };
 		EEC1D7A32411174000CA961E /* TinkoffChat.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EEC1D79B2411174000CA961E /* TinkoffChat.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EEC1D7A8241117E000CA961E /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1D7942411138900CA961E /* Hello.swift */; };
+		EEF99BFF241CCB33005268C2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF99BFE241CCB33005268C2 /* DataManager.swift */; };
+		EEF99C03241CCEE5005268C2 /* OperationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF99C02241CCEE5005268C2 /* OperationDataManager.swift */; };
+		EEF99C05241CCF5D005268C2 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF99C04241CCF5D005268C2 /* AsyncOperation.swift */; };
+		EEF99C07241CD7D8005268C2 /* GCDDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF99C06241CD7D8005268C2 /* GCDDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,10 +84,13 @@
 		EE23AB922408444D00301505 /* MessageCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellModel.swift; sourceTree = "<group>"; };
 		EE23AB98240846A000301505 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		EE23AB99240846A000301505 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
-		EEC1D7942411138900CA961E /* Hello.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hello.swift; sourceTree = "<group>"; };
 		EEC1D79B2411174000CA961E /* TinkoffChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinkoffChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC1D79D2411174000CA961E /* TinkoffChat_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TinkoffChat_iOS.h; sourceTree = "<group>"; };
 		EEC1D79E2411174000CA961E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEF99BFE241CCB33005268C2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		EEF99C02241CCEE5005268C2 /* OperationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDataManager.swift; sourceTree = "<group>"; };
+		EEF99C04241CCF5D005268C2 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		EEF99C06241CD7D8005268C2 /* GCDDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +142,8 @@
 		EE092C5423F5C91500B30E08 /* TinkoffChat */ = {
 			isa = PBXGroup;
 			children = (
+				EEF99BFB241CCB0D005268C2 /* Utilities */,
 				EE092C5523F5C91500B30E08 /* AppDelegate.swift */,
-				EEC1D7942411138900CA961E /* Hello.swift */,
 				EEC1D78E240BD4A600CA961E /* Resources */,
 				EEC1D78B240BD42900CA961E /* ViewControllers */,
 				EEC1D78D240BD47600CA961E /* TableViewCell */,
@@ -214,6 +219,17 @@
 				EEC1D79E2411174000CA961E /* Info.plist */,
 			);
 			path = "TinkoffChat-iOS";
+			sourceTree = "<group>";
+		};
+		EEF99BFB241CCB0D005268C2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EEF99BFE241CCB33005268C2 /* DataManager.swift */,
+				EEF99C02241CCEE5005268C2 /* OperationDataManager.swift */,
+				EEF99C04241CCF5D005268C2 /* AsyncOperation.swift */,
+				EEF99C06241CD7D8005268C2 /* GCDDataManager.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,16 +378,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE23AB8D24080F9100301505 /* ConfigurationCellModel.swift in Sources */,
+				EEF99C05241CCF5D005268C2 /* AsyncOperation.swift in Sources */,
 				EE23AB8F24081AFC00301505 /* ConversationViewController.swift in Sources */,
 				EE23AB852407F9A900301505 /* ConversationsListViewController.swift in Sources */,
+				EEF99C07241CD7D8005268C2 /* GCDDataManager.swift in Sources */,
 				EE23AB882407FEA400301505 /* ConversationCell.swift in Sources */,
 				EE23AB9A240846A000301505 /* MessageCell.swift in Sources */,
 				EE092C5A23F5C91500B30E08 /* ProfileViewController.swift in Sources */,
 				EE23AB8B24080F0E00301505 /* ConfigurableView.swift in Sources */,
 				EE23AB932408444D00301505 /* MessageCellModel.swift in Sources */,
+				EEF99BFF241CCB33005268C2 /* DataManager.swift in Sources */,
 				EE092C6023F5C91500B30E08 /* TinkoffChat.xcdatamodeld in Sources */,
-				EEC1D7952411138900CA961E /* Hello.swift in Sources */,
 				EE092C5623F5C91500B30E08 /* AppDelegate.swift in Sources */,
+				EEF99C03241CCEE5005268C2 /* OperationDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +406,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEC1D7A8241117E000CA961E /* Hello.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,7 +561,6 @@
 		EE092C7523F5C91500B30E08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DT65SS5ZB;
@@ -564,7 +581,6 @@
 		EE092C7623F5C91500B30E08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DT65SS5ZB;
