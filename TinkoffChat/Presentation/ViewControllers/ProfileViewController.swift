@@ -12,7 +12,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     
     var userInfoChanged: (name: Bool, description: Bool, photo: Bool) = (false, false, false)
     var imagePicker : UIImagePickerController? = UIImagePickerController()
-    var dataManager = StorageManager()
+    var storageManager: StorageManagerProtocol = StorageManager()
     var useDataManager: Bool = true
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -26,7 +26,13 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             editButton.layer.borderColor = UIColor.black.cgColor
         }
     }
-    @IBOutlet weak var SaveButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton! {
+        didSet {
+            saveButton.layer.cornerRadius = 8
+            saveButton.layer.borderWidth = 1
+            saveButton.layer.borderColor = UIColor.black.cgColor
+        }
+    }
     @IBOutlet weak var savingDataActivityIndicator: UIActivityIndicatorView!
     
     @IBAction func SaveButtonToched(_ sender: UIButton) {
@@ -116,7 +122,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             userInfo.userPhoto = profileImage.image
         }
         
-        dataManager.saveAppUser(name: userInfo.userName, info: userInfo.userDescription, photo: userInfo.userPhoto) { errorString in
+        storageManager.saveAppUser(name: userInfo.userName, info: userInfo.userDescription, photo: userInfo.userPhoto) { errorString in
             DispatchQueue.main.async {
                 self.savingDataActivityIndicator.stopAnimating()
                 if (errorString != nil) {
@@ -144,7 +150,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     func loadData() {
         
         savingDataActivityIndicator.startAnimating()
-        let appUser = dataManager.loadAppUser()
+        let appUser = storageManager.loadAppUser()
         
         if let appUser = appUser {
             if let name = appUser.name {
@@ -269,15 +275,15 @@ extension ProfileViewController {
     
     func buttonsEnabled(are isEnabled: Bool) {
         
-        SaveButton.isEnabled = isEnabled
+        saveButton.isEnabled = isEnabled
         
         let color = isEnabled ? UIColor.black : UIColor.gray
-        SaveButton.setTitleColor(color, for: .normal)
+        saveButton.setTitleColor(color, for: .normal)
     }
     
     func buttonsHidden(are isHidden: Bool) {
         
-        SaveButton.isHidden = isHidden
+        saveButton.isHidden = isHidden
         addPhotoButton.isHidden = isHidden
     }
     

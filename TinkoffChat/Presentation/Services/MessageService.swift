@@ -21,7 +21,7 @@ class MessageService: MessageServiceProtocol {
         .document(channelID).collection("messages")
     
     private let channelID: String
-    private let gcdDataManager = GCDDataManager()
+    private let storeManager: StorageManagerProtocol = StorageManager()
     
     init(channelID: String) {
         self.channelID = channelID
@@ -50,15 +50,13 @@ class MessageService: MessageServiceProtocol {
     }
     
     func sendMessage(content: String) {
-        gcdDataManager.loadData { [weak self] (userInfo, _) in
-            if let userInfo = userInfo {
-                let message = Message(content: content,
-                                      created: Date(),
-                                      senderID: userID,
-                                      senderName: userInfo.userName ?? "Artem Emelianov") // Временно, тк пользователь может не указать имя в профиле
-                self?.reference.addDocument(data: message.toDict) { (error) in
-                    print(error ?? "")
-                }
+        if let userInfo = storeManager.loadAppUser() {
+            let message = Message(content: content,
+                                  created: Date(),
+                                  senderID: userID,
+                                  senderName: userInfo.name ?? "Artem Emelianov") // Временно, тк пользователь может не указать имя в профиле
+            reference.addDocument(data: message.toDict) { (error) in
+                print(error ?? "")
             }
         }
     }

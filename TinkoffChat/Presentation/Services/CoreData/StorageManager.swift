@@ -10,11 +10,19 @@ import Foundation
 import CoreData
 import UIKit
 
-class StorageManager {
+
+protocol StorageManagerProtocol {
     
-    var coreDataStack: CoreDataStack = CoreDataStack()
+    func saveAppUser(name: String?, info: String?, photo: UIImage?, completionHandler: @escaping ((String?)->Void))
+    func loadAppUser() -> AppUser?
+}
+
+
+class StorageManager: StorageManagerProtocol {
     
-    func getProfile(in context: NSManagedObjectContext) -> AppUser? {
+    private var coreDataStack: CoreDataStack = CoreDataStack()
+    
+    private func getProfile(in context: NSManagedObjectContext) -> AppUser? {
         
         var appUser : AppUser?
         
@@ -44,7 +52,7 @@ class StorageManager {
     
     func saveAppUser(name: String?, info: String?, photo: UIImage?, completionHandler: @escaping ((String?)->Void)) {
         
-        let appUser = self.getProfile(in: coreDataStack.masterContext)
+        let appUser = getProfile(in: coreDataStack.masterContext)
 
         if (appUser != nil) {
             if let name = name {
@@ -63,7 +71,7 @@ class StorageManager {
                     return
                 }
             }
-            self.coreDataStack.performSave(context: self.coreDataStack.masterContext, completionHandler: completionHandler)
+            coreDataStack.performSave(context: coreDataStack.masterContext, completionHandler: completionHandler)
         } else {
             completionHandler("Can't find or insert AppUser")
             print("Can't find or insert AppUser")
@@ -71,6 +79,6 @@ class StorageManager {
     }
     
     func loadAppUser() -> AppUser? {
-        return self.getProfile(in: self.coreDataStack.saveContext)
+        return getProfile(in: coreDataStack.saveContext)
     }
 }

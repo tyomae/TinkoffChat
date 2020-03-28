@@ -180,7 +180,7 @@
                                 <rect key="frame" x="141.5" y="255.5" width="37" height="37"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwZ-KH-Ao1">
-                                <rect key="frame" x="20" y="493" width="280" height="30"/>
+                                <rect key="frame" x="20" y="488" width="280" height="40"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -194,7 +194,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wvq-AV-ygb" secondAttribute="trailing" constant="20" id="0Uh-V4-DPx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BwZ-KH-Ao1" secondAttribute="trailing" constant="20" id="2ju-PA-Iz0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wvq-AV-ygb" secondAttribute="bottom" constant="20" id="8SU-P8-v7F"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BwZ-KH-Ao1" secondAttribute="bottom" constant="25" id="FFJ-Kx-lhB"/>
+                            <constraint firstItem="BwZ-KH-Ao1" firstAttribute="top" secondItem="1Id-Th-Aqw" secondAttribute="bottom" constant="10" id="EPa-dZ-iHf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BwZ-KH-Ao1" secondAttribute="bottom" constant="20" id="FFJ-Kx-lhB"/>
                             <constraint firstItem="1Id-Th-Aqw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FMg-VK-NsY"/>
                             <constraint firstItem="1Id-Th-Aqw" firstAttribute="top" secondItem="sBD-Ha-Y7I" secondAttribute="bottom" constant="10" id="LVW-dj-KLr"/>
                             <constraint firstItem="8Sv-cV-AGp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mfv-n5-kSR"/>
@@ -224,12 +225,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="SaveButton" destination="BwZ-KH-Ao1" id="r9y-zH-Rab"/>
                         <outlet property="addPhotoButton" destination="wfZ-gq-GPq" id="Yr3-xE-kKw"/>
                         <outlet property="descriptionTextView" destination="1Id-Th-Aqw" id="OZf-rL-UKC"/>
                         <outlet property="editButton" destination="wvq-AV-ygb" id="H7i-MM-CDF"/>
                         <outlet property="nameTextField" destination="sBD-Ha-Y7I" id="rb7-nf-tdr"/>
                         <outlet property="profileImage" destination="sV8-My-l5N" id="0Gn-CE-5oT"/>
+                        <outlet property="saveButton" destination="BwZ-KH-Ao1" id="r9y-zH-Rab"/>
                         <outlet property="savingDataActivityIndicator" destination="8Sv-cV-AGp" id="Yjb-dC-pkk"/>
                     </connections>
                 </viewController>
