@@ -28,8 +28,9 @@ class ChannelService: ChannelServiceProtocol {
                     if let lastActivity = document.data()["lastActivity"] as? Timestamp {
                         activityDate = lastActivity.dateValue()
                     }
+                    
                     return Channel(identifier: document.documentID,
-                                   name: document.data()["name"] as! String,
+                                   name: document.data()["name"] as? String ?? "",
                                    lastMessage: (document.data()["lastMessage"] as? String ?? ""),
                                    lastActivity: activityDate)
                 }
