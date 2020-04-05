@@ -12,9 +12,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     
     var userInfoChanged: (name: Bool, description: Bool, photo: Bool) = (false, false, false)
     var imagePicker : UIImagePickerController? = UIImagePickerController()
-    var gcdDataManager = GCDDataManager()
-    var operationDataManager = OperationDataManager()
-    var useGCDDataManager: Bool = true
+    var storageManager: StorageManagerProtocol = StorageManager()
+    var useDataManager: Bool = true
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
@@ -27,18 +26,18 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             editButton.layer.borderColor = UIColor.black.cgColor
         }
     }
-    @IBOutlet weak var gcdSaveButton: UIButton!
-    @IBOutlet weak var operationSaveButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton! {
+        didSet {
+            saveButton.layer.cornerRadius = 8
+            saveButton.layer.borderWidth = 1
+            saveButton.layer.borderColor = UIColor.black.cgColor
+        }
+    }
     @IBOutlet weak var savingDataActivityIndicator: UIActivityIndicatorView!
     
-    @IBAction func gcdSaveButtonToched(_ sender: UIButton) {
+    @IBAction func SaveButtonToched(_ sender: UIButton) {
         self.view.endEditing(true)
-        useGCDDataManager = true
-        saveData()
-    }
-    @IBAction func operationSaveButtonToched(_ sender: UIButton) {
-        self.view.endEditing(true)
-        useGCDDataManager = false
+        useDataManager = true
         saveData()
     }
     @IBAction func editButtonToched(_ sender: UIButton) {
@@ -123,13 +122,15 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             userInfo.userPhoto = profileImage.image
         }
         
-        if useGCDDataManager {
-            gcdDataManager.saveData(userInfo: userInfo) { [weak self] (error) in
-                self?.processSaving(error: error)
-            }
-        } else {
-            operationDataManager.saveData(userInfo: userInfo) { [weak self] (error) in
-                self?.processSaving(error: error)
+        storageManager.saveAppUser(name: userInfo.userName, info: userInfo.userDescription, photo: userInfo.userPhoto) { errorString in
+            DispatchQueue.main.async {
+                self.savingDataActivityIndicator.stopAnimating()
+                if (errorString != nil) {
+                    self.showDataWasNotSavedAlert()
+                }
+                else {
+                    self.showDataSavedAlert()
+                }
             }
         }
     }
@@ -149,35 +150,35 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     func loadData() {
         
         savingDataActivityIndicator.startAnimating()
+        let appUser = storageManager.loadAppUser()
         
-        if useGCDDataManager {
-            gcdDataManager.loadData { [weak self] (userInfo, _) in
-                if let userInfo = userInfo {
-                self?.processLoading(userInfo: userInfo)
-                }
+        if let appUser = appUser {
+            if let name = appUser.name {
+                self.nameTextField.text = name
             }
-        } else {
-            operationDataManager.loadData { [weak self] (userInfo, _) in
-                 if let userInfo = userInfo {
-                               self?.processLoading(userInfo: userInfo)
-                               }
+            if let description = appUser.info {
+                self.descriptionTextView.text = description
+            }
+            if let photo = appUser.photo{
+                self.profileImage.image = UIImage(data: photo as Data)
             }
         }
+        self.savingDataActivityIndicator.stopAnimating()
     }
     
     func processLoading(userInfo: UserInfo) {
         
         savingDataActivityIndicator.stopAnimating()
         
-            if let name = userInfo.userName {
-                self.nameTextField.text = name
-            }
-            if let description = userInfo.userDescription {
-                self.descriptionTextView.text = description
-            }
-            if let photo = userInfo.userPhoto {
-                self.profileImage.image = photo
-            }
+        if let name = userInfo.userName {
+            self.nameTextField.text = name
+        }
+        if let description = userInfo.userDescription {
+            self.descriptionTextView.text = description
+        }
+        if let photo = userInfo.userPhoto {
+            self.profileImage.image = photo
+        }
     }
     
     func showDataSavedAlert() {
@@ -245,7 +246,7 @@ extension ProfileViewController {
         buttonsHidden(are: false)
         buttonsEnabled(are: false)
         addPhotoButton.isEnabled = true
-    
+        
         descriptionTextView.isEditable = true
         descriptionTextView.layer.cornerRadius = 15
         descriptionTextView.textContainerInset = .init(top: 3, left: 5, bottom: 1, right: 5)
@@ -274,18 +275,15 @@ extension ProfileViewController {
     
     func buttonsEnabled(are isEnabled: Bool) {
         
-        gcdSaveButton.isEnabled = isEnabled
-        operationSaveButton.isEnabled = isEnabled
+        saveButton.isEnabled = isEnabled
         
         let color = isEnabled ? UIColor.black : UIColor.gray
-        gcdSaveButton.setTitleColor(color, for: .normal)
-        operationSaveButton.setTitleColor(color, for: .normal)
+        saveButton.setTitleColor(color, for: .normal)
     }
     
     func buttonsHidden(are isHidden: Bool) {
         
-        gcdSaveButton.isHidden = isHidden
-        operationSaveButton.isHidden = isHidden
+        saveButton.isHidden = isHidden
         addPhotoButton.isHidden = isHidden
     }
     

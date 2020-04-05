@@ -36,6 +36,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="ox9-oD-jUz">
                         <barButtonItem key="backBarButtonItem" title=" " id="e9S-7x-DCT"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="Mc0-IH-EAf">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addChannelButton:" destination="skW-L4-iOI" id="bqt-gt-aAV"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="user" id="Dik-Rz-UjC">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -61,18 +67,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwR-Ss-yW5">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="474"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="tri-Tb-RDD" id="XEr-3S-RL9"/>
                                     <outlet property="delegate" destination="tri-Tb-RDD" id="eik-DE-GGB"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dp3-q5-ra8">
+                                <rect key="frame" x="10" y="528" width="254" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05W-wK-kNC">
+                                <rect key="frame" x="274" y="528" width="36" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="cEq-wL-kx2"/>
+                                </constraints>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendMessageTapped:" destination="tri-Tb-RDD" eventType="touchUpInside" id="1fY-50-23n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Anb-Sz-cve" firstAttribute="bottom" secondItem="hwR-Ss-yW5" secondAttribute="bottom" id="DVs-6h-dsB"/>
+                            <constraint firstItem="dp3-q5-ra8" firstAttribute="top" secondItem="hwR-Ss-yW5" secondAttribute="bottom" constant="10" id="BmU-7f-PaH"/>
+                            <constraint firstItem="05W-wK-kNC" firstAttribute="leading" secondItem="dp3-q5-ra8" secondAttribute="trailing" constant="10" id="CZx-sr-HnP"/>
+                            <constraint firstItem="Anb-Sz-cve" firstAttribute="bottom" secondItem="hwR-Ss-yW5" secondAttribute="bottom" constant="50" id="DVs-6h-dsB"/>
+                            <constraint firstItem="dp3-q5-ra8" firstAttribute="leading" secondItem="Anb-Sz-cve" secondAttribute="leading" constant="10" id="QYS-5i-UEh"/>
+                            <constraint firstItem="Anb-Sz-cve" firstAttribute="bottom" secondItem="05W-wK-kNC" secondAttribute="bottom" constant="10" id="WmE-cD-XuJ"/>
                             <constraint firstItem="hwR-Ss-yW5" firstAttribute="leading" secondItem="Anb-Sz-cve" secondAttribute="leading" id="YmA-a2-qVL"/>
+                            <constraint firstItem="Anb-Sz-cve" firstAttribute="bottom" secondItem="dp3-q5-ra8" secondAttribute="bottom" constant="10" id="asU-C6-bVL"/>
+                            <constraint firstItem="Anb-Sz-cve" firstAttribute="trailing" secondItem="05W-wK-kNC" secondAttribute="trailing" constant="10" id="kkc-pd-ioS"/>
+                            <constraint firstItem="05W-wK-kNC" firstAttribute="top" secondItem="hwR-Ss-yW5" secondAttribute="bottom" constant="10" id="q8E-VR-hhe"/>
                             <constraint firstItem="Anb-Sz-cve" firstAttribute="trailing" secondItem="hwR-Ss-yW5" secondAttribute="trailing" id="rKk-Wx-fLb"/>
                             <constraint firstItem="hwR-Ss-yW5" firstAttribute="top" secondItem="Anb-Sz-cve" secondAttribute="top" id="vmB-q2-EBj"/>
                         </constraints>
@@ -80,12 +110,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="lEK-WN-Muj"/>
                     <connections>
+                        <outlet property="messageTextField" destination="dp3-q5-ra8" id="VLA-RT-SwP"/>
+                        <outlet property="sendMessageButton" destination="05W-wK-kNC" id="KQC-yr-9U5"/>
                         <outlet property="tableView" destination="hwR-Ss-yW5" id="IM8-66-WoX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYg-tZ-gVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1686" y="108"/>
+            <point key="canvasLocation" x="1065" y="107.74647887323944"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -144,48 +176,38 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5I-T9-0Ah">
-                                <rect key="frame" x="232" y="493" width="68" height="30"/>
-                                <state key="normal" title="Operation">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="operationSaveButtonToched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vz9-57-vgx"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8Sv-cV-AGp">
                                 <rect key="frame" x="141.5" y="255.5" width="37" height="37"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwZ-KH-Ao1">
-                                <rect key="frame" x="20" y="493" width="33" height="30"/>
-                                <state key="normal" title="GCD">
+                                <rect key="frame" x="20" y="488" width="280" height="40"/>
+                                <state key="normal" title="Save">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="gcdSaveButtonToched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p23-45-lUG"/>
+                                    <action selector="SaveButtonToched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p23-45-lUG"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wvq-AV-ygb" secondAttribute="trailing" constant="20" id="0Uh-V4-DPx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BwZ-KH-Ao1" secondAttribute="trailing" constant="20" id="2ju-PA-Iz0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wvq-AV-ygb" secondAttribute="bottom" constant="20" id="8SU-P8-v7F"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BwZ-KH-Ao1" secondAttribute="bottom" constant="25" id="FFJ-Kx-lhB"/>
+                            <constraint firstItem="BwZ-KH-Ao1" firstAttribute="top" secondItem="1Id-Th-Aqw" secondAttribute="bottom" constant="10" id="EPa-dZ-iHf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BwZ-KH-Ao1" secondAttribute="bottom" constant="20" id="FFJ-Kx-lhB"/>
                             <constraint firstItem="1Id-Th-Aqw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FMg-VK-NsY"/>
                             <constraint firstItem="1Id-Th-Aqw" firstAttribute="top" secondItem="sBD-Ha-Y7I" secondAttribute="bottom" constant="10" id="LVW-dj-KLr"/>
                             <constraint firstItem="8Sv-cV-AGp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mfv-n5-kSR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sBD-Ha-Y7I" secondAttribute="trailing" constant="16" id="Ofs-Vm-Z40"/>
                             <constraint firstItem="sV8-My-l5N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Pdd-y3-biv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sV8-My-l5N" secondAttribute="trailing" constant="16" id="Qho-dK-m8h"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o5I-T9-0Ah" secondAttribute="bottom" constant="25" id="RJy-7B-g9G"/>
                             <constraint firstItem="wvq-AV-ygb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SR1-pF-UKU"/>
                             <constraint firstItem="BwZ-KH-Ao1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SdG-qo-Yw1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o5I-T9-0Ah" secondAttribute="trailing" constant="20" id="TnC-dS-Seg"/>
                             <constraint firstItem="wfZ-gq-GPq" firstAttribute="width" secondItem="sV8-My-l5N" secondAttribute="width" multiplier="0.277778" id="UBc-O3-QnX"/>
                             <constraint firstItem="wfZ-gq-GPq" firstAttribute="bottom" secondItem="sV8-My-l5N" secondAttribute="bottom" id="YK3-cT-UXB"/>
                             <constraint firstItem="sBD-Ha-Y7I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fHr-LI-6S4"/>
                             <constraint firstItem="wfZ-gq-GPq" firstAttribute="trailing" secondItem="sV8-My-l5N" secondAttribute="trailing" id="gdA-FV-Hxr"/>
-                            <constraint firstItem="o5I-T9-0Ah" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BwZ-KH-Ao1" secondAttribute="trailing" constant="8" symbolic="YES" id="gdb-OC-9o2"/>
                             <constraint firstItem="sBD-Ha-Y7I" firstAttribute="top" secondItem="sV8-My-l5N" secondAttribute="bottom" constant="10" id="jFZ-B6-YlK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Id-Th-Aqw" secondAttribute="trailing" constant="16" id="nyJ-kr-aR3"/>
                             <constraint firstItem="sV8-My-l5N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="v45-mu-85W"/>
@@ -206,10 +228,9 @@
                         <outlet property="addPhotoButton" destination="wfZ-gq-GPq" id="Yr3-xE-kKw"/>
                         <outlet property="descriptionTextView" destination="1Id-Th-Aqw" id="OZf-rL-UKC"/>
                         <outlet property="editButton" destination="wvq-AV-ygb" id="H7i-MM-CDF"/>
-                        <outlet property="gcdSaveButton" destination="BwZ-KH-Ao1" id="r9y-zH-Rab"/>
                         <outlet property="nameTextField" destination="sBD-Ha-Y7I" id="rb7-nf-tdr"/>
-                        <outlet property="operationSaveButton" destination="o5I-T9-0Ah" id="mne-pY-vi8"/>
                         <outlet property="profileImage" destination="sV8-My-l5N" id="0Gn-CE-5oT"/>
+                        <outlet property="saveButton" destination="BwZ-KH-Ao1" id="r9y-zH-Rab"/>
                         <outlet property="savingDataActivityIndicator" destination="8Sv-cV-AGp" id="Yjb-dC-pkk"/>
                     </connections>
                 </viewController>
@@ -233,6 +254,9 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bm-T2-RUo">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="skW-L4-iOI" kind="relationship" relationship="rootViewController" id="ErW-Y4-GIR"/>
                     </connections>
