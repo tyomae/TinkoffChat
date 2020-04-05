@@ -33,13 +33,21 @@ class ConversationViewController: UIViewController {
     
     var messages = [Message]()
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.tableViewScrollToBottom(animated: true)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        msgService.addMessageListener { [weak self] (messages, error) in
+        msgService.addMessageListener { [weak self] (messages) in
             guard let messages = messages else { return }
             guard let self = self else { return }
             let messagesShowsFirst = !self.messages.isEmpty

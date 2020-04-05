@@ -34,7 +34,7 @@ class ConversationsListViewController: UIViewController {
         self.navigationItem.backBarButtonItem?.tintColor = .black
         title = "TinkoffChat"
         
-        chService.addChannelListener { [weak self] (channels, error) in
+        chService.addChannelListener { [weak self] (channels) in
             guard let channels = channels else { return }
             let date: Date = Date(timeIntervalSinceNow: -600)
             self?.onlineChannels = channels.filter({ channel -> Bool in
@@ -66,7 +66,9 @@ class ConversationsListViewController: UIViewController {
             self?.historyChannels.sort(by: { (channel1, channel2) -> Bool in
                 return channel1.lastActivity != nil || channel2.lastActivity != nil
             })
+             DispatchQueue.main.async {
             self?.tableView.reloadData()
+            }
         }
     }
     
@@ -111,6 +113,21 @@ extension ConversationsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "toConversation", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let channel = indexPath.section == 0 ? onlineChannels[indexPath.row] : historyChannels[indexPath.row]
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { [unowned self] (_, _) in
+            self.chService.remove(id: channel.identifier)
+            if indexPath.section == 0 {
+                self.onlineChannels.remove(at: indexPath.row)
+            } else {
+                self.historyChannels.remove(at: indexPath.row)
+            }
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        return [deleteAction]
     }
 }
 

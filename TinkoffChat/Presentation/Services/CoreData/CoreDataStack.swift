@@ -30,7 +30,8 @@ class CoreDataStack {
             try coordinator.addPersistentStore(ofType: NSSQLiteStoreType,
                                                configurationName: nil,
                                                at: storeURL,
-                                               options: nil)
+                                               options: [NSMigratePersistentStoresAutomaticallyOption: true,
+                                                         NSInferMappingModelAutomaticallyOption: true])
         } catch {
             assert(false, "Error adding store: \(error)")
         }

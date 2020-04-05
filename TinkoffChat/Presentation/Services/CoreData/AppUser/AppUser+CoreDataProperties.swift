@@ -18,5 +18,4 @@ extension AppUser {
     @NSManaged public var name: String?
     @NSManaged public var info: String?
     @NSManaged public var photo: NSData?
-
 }
