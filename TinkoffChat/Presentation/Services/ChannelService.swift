@@ -47,13 +47,18 @@ class ChannelService: NSObject, ChannelServiceProtocol {
             guard let snapshot = snapshot else { return }
             
             let saveContext = self.coreDataStack.saveContext
+            guard let oldChannelEntities = ConversationEntity.findAllConversations(context: saveContext, by: self.conversationFetchRequester) else { return }
+            oldChannelEntities.forEach({
+                saveContext.delete($0)
+            })
+
             saveContext.perform {
                 snapshot.documents.forEach { document in
                     var activityDate: Date?
                     if let lastActivity = document.data()["lastActivity"] as? Timestamp {
                         activityDate = lastActivity.dateValue()
                     }
-                    let conversationEntity = ConversationEntity.findOrInsertConversationWith(conversationId: document.documentID, in: saveContext, by: self.conversationFetchRequester)
+                    let conversationEntity = ConversationEntity.insertConversationWith(id: document.documentID, in: saveContext)
                     conversationEntity.id = document.documentID
                     conversationEntity.name = document.data()["name"] as? String ?? ""
                     conversationEntity.lastActivity = activityDate
@@ -88,7 +93,6 @@ extension ChannelService: NSFetchedResultsControllerDelegate {
             self.updateChannels()
         }
     }
-    
     
     func updateChannels() {
         guard let fetchedObjects = fetchResultController.fetchedObjects else { return }

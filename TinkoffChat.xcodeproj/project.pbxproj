@@ -25,7 +25,6 @@
 		EE42F348242F7283006463FA /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42F347242F7283006463FA /* AppUser.swift */; };
 		EE42F34A242F737A006463FA /* AppUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42F349242F737A006463FA /* AppUser+CoreDataProperties.swift */; };
 		EE42F352242F7A1E006463FA /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42F351242F7A1E006463FA /* StorageManager.swift */; };
-		EE73EE1B242292700077EB85 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE73EE1A242292700077EB85 /* GoogleService-Info.plist */; };
 		EE93901C243795A400B4D1C9 /* MessageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93901B243795A400B4D1C9 /* MessageEntity.swift */; };
 		EE9390202437982200B4D1C9 /* MessageFetchRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93901F2437982200B4D1C9 /* MessageFetchRequester.swift */; };
 		EEC1D79F2411174000CA961E /* TinkoffChat_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = EEC1D79D2411174000CA961E /* TinkoffChat_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,6 +44,7 @@
 		EEFA06572427897100D37BA0 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA06502427897100D37BA0 /* AsyncOperation.swift */; };
 		EEFA06582427897100D37BA0 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA06512427897100D37BA0 /* MessageService.swift */; };
 		EEFA06592427897100D37BA0 /* ChannelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA06522427897100D37BA0 /* ChannelService.swift */; };
+		EEFC95FB243A42DB00FCF60C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEFC95FA243A42DB00FCF60C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +103,6 @@
 		EE42F347242F7283006463FA /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		EE42F349242F737A006463FA /* AppUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EE42F351242F7A1E006463FA /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		EE73EE1A242292700077EB85 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "TinkoffChat/Resources/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		EE93901B243795A400B4D1C9 /* MessageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageEntity.swift; sourceTree = "<group>"; };
 		EE93901F2437982200B4D1C9 /* MessageFetchRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFetchRequester.swift; sourceTree = "<group>"; };
 		EEC1D79B2411174000CA961E /* TinkoffChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinkoffChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +123,7 @@
 		EEFA06502427897100D37BA0 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		EEFA06512427897100D37BA0 /* MessageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		EEFA06522427897100D37BA0 /* ChannelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelService.swift; sourceTree = "<group>"; };
+		EEFC95FA243A42DB00FCF60C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,8 +269,8 @@
 		EEC1D78E240BD4A600CA961E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EE73EE1A242292700077EB85 /* GoogleService-Info.plist */,
 				EE092C6623F5C91500B30E08 /* Info.plist */,
+				EEFC95FA243A42DB00FCF60C /* GoogleService-Info.plist */,
 				EE092C5B23F5C91500B30E08 /* Main.storyboard */,
 				EE092C6123F5C91500B30E08 /* Assets.xcassets */,
 				EE092C6323F5C91500B30E08 /* LaunchScreen.storyboard */,
@@ -479,7 +479,7 @@
 				EE092C6223F5C91500B30E08 /* Assets.xcassets in Resources */,
 				EED852DF242668880061EBC2 /* MessageeCell.xib in Resources */,
 				EE092C5D23F5C91500B30E08 /* Main.storyboard in Resources */,
-				EE73EE1B242292700077EB85 /* GoogleService-Info.plist in Resources */,
+				EEFC95FB243A42DB00FCF60C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,7 +753,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.tcsbank.TinkoffChat;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.tinkoff.messenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
@@ -774,7 +774,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.tcsbank.TinkoffChat;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.tinkoff.messenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

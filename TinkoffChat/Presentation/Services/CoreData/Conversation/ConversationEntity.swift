@@ -22,7 +22,19 @@ class ConversationEntity: NSManagedObject {
         conversation.id = id
         return conversation
     }
-
+    
+    static func findAllConversations(context: NSManagedObjectContext,
+                                      by conversationRequester: ConversationFetchRequesterProtocol) -> [ConversationEntity]? {
+        let request = conversationRequester.fetchConversations()
+        do {
+            let conversations = try context.fetch(request)
+            return conversations
+        } catch {
+            assertionFailure("Can't get conversations by a fetch.")
+            return nil
+        }
+    }
+    
     static func findConversationWith(conversationId: String,
                                      in context: NSManagedObjectContext,
                                      by conversationRequester: ConversationFetchRequesterProtocol) -> ConversationEntity? {
@@ -39,16 +51,5 @@ class ConversationEntity: NSManagedObject {
             assertionFailure("Can't get conversations by a fetch")
             return nil
         }
-    }
-
-    static func findOrInsertConversationWith(conversationId: String,
-                                             in context: NSManagedObjectContext,
-                                             by conversationRequester: ConversationFetchRequesterProtocol) -> ConversationEntity {
-        guard let conversation = ConversationEntity.findConversationWith(conversationId: conversationId,
-                                                                   in: context,
-                                                                   by: conversationRequester) else {
-            return ConversationEntity.insertConversationWith(id: conversationId, in: context)
-        }
-        return conversation
     }
 }
