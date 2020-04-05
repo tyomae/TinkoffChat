@@ -46,8 +46,9 @@ class MessageService: NSObject, MessageServiceProtocol {
     func addMessageListener(handler: @escaping ([Message]?) -> ()) {
         _handler = handler
         updateMessages()
-        reference.addSnapshotListener { [unowned self] snapshot, error in
-            guard let snapshot = snapshot else { return }
+        reference.addSnapshotListener { [weak self] snapshot, error in
+            guard let self = self,
+                let snapshot = snapshot else { return }
             
             let saveContext = self.coreDataStack.saveContext
             

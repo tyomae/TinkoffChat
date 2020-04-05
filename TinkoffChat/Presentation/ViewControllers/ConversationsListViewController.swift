@@ -118,7 +118,8 @@ extension ConversationsListViewController: UITableViewDelegate {
      func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let channel = indexPath.section == 0 ? onlineChannels[indexPath.row] : historyChannels[indexPath.row]
-        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { [unowned self] (_, _) in
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { [weak self] (_, _) in
+            guard let self = self else { return }
             self.chService.remove(id: channel.identifier)
             if indexPath.section == 0 {
                 self.onlineChannels.remove(at: indexPath.row)
