@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="KGk-i7-Jjw" customClass="MessageeCell" customModule="TinkoffChat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="517" height="111"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="517" height="111"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioM-DD-NtO">
+                        <rect key="frame" x="10" y="10" width="151" height="77.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUb-tP-VBL">
+                                <rect key="frame" x="8" y="8" width="137" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ContentContent" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Kh-SW-DDv">
+                                <rect key="frame" x="14" y="30.5" width="123" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjJ-7N-Bts">
+                                <rect key="frame" x="115" y="55" width="28" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99817687273025513" green="1" blue="0.32916659116744995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="2Vo-4D-5ae"/>
+                            <constraint firstItem="PUb-tP-VBL" firstAttribute="leading" secondItem="ioM-DD-NtO" secondAttribute="leading" constant="8" id="C30-lG-yXc"/>
+                            <constraint firstItem="vjJ-7N-Bts" firstAttribute="top" secondItem="8Kh-SW-DDv" secondAttribute="bottom" constant="4" id="FBm-wN-bdd"/>
+                            <constraint firstAttribute="trailing" secondItem="8Kh-SW-DDv" secondAttribute="trailing" constant="14" id="FVN-Go-jI6"/>
+                            <constraint firstItem="8Kh-SW-DDv" firstAttribute="leading" secondItem="ioM-DD-NtO" secondAttribute="leading" constant="14" id="QIp-dT-FDX"/>
+                            <constraint firstAttribute="bottom" secondItem="vjJ-7N-Bts" secondAttribute="bottom" constant="8" id="Yae-Ze-yOW"/>
+                            <constraint firstItem="8Kh-SW-DDv" firstAttribute="top" secondItem="PUb-tP-VBL" secondAttribute="bottom" constant="8" id="fGz-cj-8NF"/>
+                            <constraint firstItem="PUb-tP-VBL" firstAttribute="top" secondItem="ioM-DD-NtO" secondAttribute="top" constant="8" id="ksA-Tl-fgr"/>
+                            <constraint firstAttribute="trailing" secondItem="PUb-tP-VBL" secondAttribute="trailing" constant="6" id="vKp-7M-uxk"/>
+                            <constraint firstAttribute="trailing" secondItem="vjJ-7N-Bts" secondAttribute="trailing" constant="8" id="yXn-Rr-OGu"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ioM-DD-NtO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="2x0-L6-8yH"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ioM-DD-NtO" secondAttribute="bottom" constant="10" id="4uO-5o-BDJ"/>
+                    <constraint firstItem="ioM-DD-NtO" firstAttribute="width" relation="lessThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.75" id="G1X-fe-3sg"/>
+                    <constraint firstAttribute="trailing" secondItem="ioM-DD-NtO" secondAttribute="trailing" constant="10" id="gST-Fo-dvf"/>
+                    <constraint firstItem="ioM-DD-NtO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="lOA-Ux-sjC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contentLabel" destination="8Kh-SW-DDv" id="dYW-yN-XG4"/>
+                <outlet property="leftViewConstaint" destination="lOA-Ux-sjC" id="Ygg-DU-PQM"/>
+                <outlet property="nameLabel" destination="PUb-tP-VBL" id="ppq-bo-fjb"/>
+                <outlet property="rightViewConstaint" destination="gST-Fo-dvf" id="cMA-Dy-r8B"/>
+                <outlet property="timeLabel" destination="vjJ-7N-Bts" id="hzj-2v-9jf"/>
+            </connections>
+            <point key="canvasLocation" x="212.31884057971016" y="204.57589285714286"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,5 +1,5 @@
 //
-//  ConfigurationCellModel.swift
+//  MessageCellModel.swift
 //  TinkoffChat
 //
 //  Created by Артем  Емельянов  on 27/02/2020.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct ConversationCellModel {
+struct MessageeCellModel {
     let name: String
-    let message: String?
-    let date: Date
-    let isOnline: Bool
-    let hasUnreadMessages: Bool
+    let text: String
+    let date: Date?
+    let isIncoming: Bool
     
-    var stringDate: String {
+    var stringDate: String? {
+        guard let date = date else { return nil }
         let dateFormatter = DateFormatter()
         let calendar = Calendar.current
         if calendar.isDateInToday(date) {
