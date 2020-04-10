@@ -24,13 +24,13 @@
 		EE42F346242F6A65006463FA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42F345242F6A65006463FA /* CoreDataStack.swift */; };
 		EE42F348242F7283006463FA /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42F347242F7283006463FA /* AppUser.swift */; };
 		EE42F34A242F737A006463FA /* AppUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42F349242F737A006463FA /* AppUser+CoreDataProperties.swift */; };
-		EE42F350242F79E8006463FA /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE42F34E242F79E8006463FA /* CoreDataModel.xcdatamodeld */; };
 		EE42F352242F7A1E006463FA /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42F351242F7A1E006463FA /* StorageManager.swift */; };
 		EEC1D79F2411174000CA961E /* TinkoffChat_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = EEC1D79D2411174000CA961E /* TinkoffChat_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEC1D7A22411174000CA961E /* TinkoffChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEC1D79B2411174000CA961E /* TinkoffChat.framework */; };
 		EEC1D7A32411174000CA961E /* TinkoffChat.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EEC1D79B2411174000CA961E /* TinkoffChat.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EED852DE242668880061EBC2 /* MessageeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED852DC242668880061EBC2 /* MessageeCell.swift */; };
 		EED852DF242668880061EBC2 /* MessageeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED852DD242668880061EBC2 /* MessageeCell.xib */; };
+		EEE5589F2440D73200393265 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEE5589C2440D73200393265 /* CoreDataModel.xcdatamodeld */; };
 		EEFA06532427897100D37BA0 /* FirebaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA064B2427897100D37BA0 /* FirebaseModels.swift */; };
 		EEFA06542427897100D37BA0 /* OperationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA064D2427897100D37BA0 /* OperationDataManager.swift */; };
 		EEFA06552427897100D37BA0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA064E2427897100D37BA0 /* DataManager.swift */; };
@@ -96,13 +96,14 @@
 		EE42F345242F6A65006463FA /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		EE42F347242F7283006463FA /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		EE42F349242F737A006463FA /* AppUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		EE42F34F242F79E8006463FA /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		EE42F351242F7A1E006463FA /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		EEC1D79B2411174000CA961E /* TinkoffChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinkoffChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC1D79D2411174000CA961E /* TinkoffChat_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TinkoffChat_iOS.h; sourceTree = "<group>"; };
 		EEC1D79E2411174000CA961E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EED852DC242668880061EBC2 /* MessageeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageeCell.swift; sourceTree = "<group>"; };
 		EED852DD242668880061EBC2 /* MessageeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageeCell.xib; sourceTree = "<group>"; };
+		EEE5589D2440D73200393265 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		EEE5589E2440D73200393265 /* CoreDataModel2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel2.xcdatamodel; sourceTree = "<group>"; };
 		EEFA064B2427897100D37BA0 /* FirebaseModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseModels.swift; sourceTree = "<group>"; };
 		EEFA064D2427897100D37BA0 /* OperationDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationDataManager.swift; sourceTree = "<group>"; };
 		EEFA064E2427897100D37BA0 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -213,7 +214,7 @@
 		EE42F342242F6A06006463FA /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				EE42F34E242F79E8006463FA /* CoreDataModel.xcdatamodeld */,
+				EEE5589C2440D73200393265 /* CoreDataModel.xcdatamodeld */,
 				EE42F345242F6A65006463FA /* CoreDataStack.swift */,
 				EE42F347242F7283006463FA /* AppUser.swift */,
 				EE42F349242F737A006463FA /* AppUser+CoreDataProperties.swift */,
@@ -508,8 +509,8 @@
 				EE23AB852407F9A900301505 /* ConversationsListViewController.swift in Sources */,
 				EE42F352242F7A1E006463FA /* StorageManager.swift in Sources */,
 				EE42F346242F6A65006463FA /* CoreDataStack.swift in Sources */,
+				EEE5589F2440D73200393265 /* CoreDataModel.xcdatamodeld in Sources */,
 				EE42F34A242F737A006463FA /* AppUser+CoreDataProperties.swift in Sources */,
-				EE42F350242F79E8006463FA /* CoreDataModel.xcdatamodeld in Sources */,
 				EE23AB882407FEA400301505 /* ConversationCell.swift in Sources */,
 				EEFA06562427897100D37BA0 /* GCDDataManager.swift in Sources */,
 				EEFA06582427897100D37BA0 /* MessageService.swift in Sources */,
@@ -872,14 +873,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		EE42F34E242F79E8006463FA /* CoreDataModel.xcdatamodeld */ = {
+		EEE5589C2440D73200393265 /* CoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				EE42F34F242F79E8006463FA /* CoreDataModel.xcdatamodel */,
+				EEE5589D2440D73200393265 /* CoreDataModel.xcdatamodel */,
+				EEE5589E2440D73200393265 /* CoreDataModel2.xcdatamodel */,
 			);
-			currentVersion = EE42F34F242F79E8006463FA /* CoreDataModel.xcdatamodel */;
-			name = CoreDataModel.xcdatamodeld;
-			path = "../../../../../../../Downloads/tinkoffchat-master-3/TinkoffChat/CoreData/CoreDataModel.xcdatamodeld";
+			currentVersion = EEE5589D2440D73200393265 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

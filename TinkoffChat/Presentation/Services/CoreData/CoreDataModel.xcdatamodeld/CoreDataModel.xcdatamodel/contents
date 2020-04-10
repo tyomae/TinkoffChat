@@ -5,6 +5,7 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="photo" optional="YES" attributeType="Binary"/>
     </entity>
+    <fetchRequest name="AppUser" entity="AppUser" predicateString="TRUEPREDICATE"/>
     <elements>
         <element name="AppUser" positionX="-54" positionY="-9" width="128" height="88"/>
     </elements>
