@@ -44,7 +44,6 @@ class ConversationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
         tableView.dataSource = self
         
         msgService.addMessageListener { [weak self] (messages) in
@@ -110,26 +109,4 @@ class ConversationViewController: UIViewController {
         }
         
     }
-}
-
-extension ConversationViewController: UITableViewDelegate {
-    
-}
-
-extension ConversationViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = String(describing: MessageeCell.self)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? MessageeCell else { return UITableViewCell() }
-        let message = messages[indexPath.row]
-        let messages = MessageeCellModel(name: message.senderName,
-                                         text: message.content,
-                                         date: message.created,
-                                         isIncoming: message.senderID != userID)
-        cell.configure(with: messages)
-        return cell
-    }  
 }

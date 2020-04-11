@@ -94,9 +94,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         print("Выбери изображение профиля")
     }
     
-    @IBAction func editButtonDidTap(_ sender: Any) {
-    }
-    
     @IBAction func hideProfileVC(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -213,31 +210,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     }
 }
 
-extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func chooseImagePicker(source: UIImagePickerController.SourceType) {
-        
-        if UIImagePickerController.isSourceTypeAvailable(source) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.allowsEditing = true
-            imagePicker.sourceType = source
-            present(imagePicker, animated: true)
-        }
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        profileImage.image = info[.editedImage] as? UIImage
-        profileImage.contentMode = .scaleAspectFill
-        profileImage.clipsToBounds = true
-        userInfoChanged.photo = true
-        buttonsEnabled(are: true)
-        dismiss(animated: true)
-    }
-}
-
 extension ProfileViewController {
     
     func putViewIntoEditingMode(){
@@ -323,6 +295,7 @@ extension ProfileViewController {
             }
         }
     }
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if (self.view.frame.origin.y >= 0) {
             return
