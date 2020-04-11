@@ -18,9 +18,8 @@ protocol ChannelServiceProtocol: class {
 
 class ChannelService: NSObject, ChannelServiceProtocol {
     
-    static let shared = ChannelService()
-    private let coreDataStack = CoreDataStack()
-    private let conversationFetchRequester = ConversationFetchRequester()
+    private let coreDataStack: CoreDataStackProtocol
+    private let conversationFetchRequester: ConversationFetchRequesterProtocol
     
     private lazy var db = Firestore.firestore()
     private lazy var reference: CollectionReference = db.collection("channels")
@@ -33,7 +32,9 @@ class ChannelService: NSObject, ChannelServiceProtocol {
     
     private var _handler: (([Channel]?) -> ())?
     
-    override init() {
+    init(coreDataStack: CoreDataStackProtocol, conversationFetchRequester: ConversationFetchRequesterProtocol) {
+        self.coreDataStack = coreDataStack
+        self.conversationFetchRequester = conversationFetchRequester
         super.init()
         
         self.fetchResultController.delegate = self
@@ -70,8 +71,7 @@ class ChannelService: NSObject, ChannelServiceProtocol {
             }
         }
     }
-    
-    
+//    
     func remove(id: String) {
         reference.document(id).delete()
         let saveContext = self.coreDataStack.saveContext

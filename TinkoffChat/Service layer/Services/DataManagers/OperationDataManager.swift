@@ -9,7 +9,14 @@
 import Foundation
 import UIKit
 
-class OperationDataManager  {
+// TODO: Создать файл отдельный
+protocol UserDataManager {
+    func saveData(userInfo: UserInfo, completion: @escaping (Error?) -> ())
+    func loadData(completion: @escaping (UserInfo?, Error?) -> ())
+}
+
+//---
+class OperationDataManager: UserDataManager {
     
     func saveData(userInfo: UserInfo, completion: @escaping (Error?) -> ()) {
         

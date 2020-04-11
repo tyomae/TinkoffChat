@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class GCDDataManager {
+class GCDDataManager: UserDataManager {
     
     func saveData(userInfo: UserInfo, completion: @escaping (Error?) -> ()) {
         

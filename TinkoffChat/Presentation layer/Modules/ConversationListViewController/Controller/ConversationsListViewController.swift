@@ -8,11 +8,10 @@
 
 import UIKit
 import Firebase
-//import Firestore
 
 class ConversationsListViewController: UIViewController {
     
-    let chService: ChannelServiceProtocol = ChannelService()
+    let chService: ChannelServiceProtocol = ChannelService(coreDataStack: CoreDataStack(), conversationFetchRequester: ConversationFetchRequester())
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {

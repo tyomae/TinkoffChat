@@ -18,7 +18,6 @@ protocol CoreDataStackProtocol {
 
 class CoreDataStack: CoreDataStackProtocol {
     
-    static let shared = CoreDataStack()
     private lazy var storeURL: URL = {
         let documentsUrl = FileManager.default.urls(for: .documentDirectory,
                                                     in: .userDomainMask).first!

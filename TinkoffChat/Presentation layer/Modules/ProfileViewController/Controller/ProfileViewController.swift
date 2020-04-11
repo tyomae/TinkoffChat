@@ -52,7 +52,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         buttonsHidden(are: true)
         putViewIntoNotEditingMode()
         
-        self.savingDataActivityIndicator.hidesWhenStopped = true
+        savingDataActivityIndicator.hidesWhenStopped = true
         nameTextField.delegate = self
         descriptionTextView.delegate = self
         imagePicker?.delegate = self
@@ -95,7 +95,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     }
     
     @IBAction func addPhotoButtonDidTap(_ sender: UIButton) {
-        
         let actionSheet = UIAlertController(title: nil,
                                             message: nil,
                                             preferredStyle: .actionSheet)

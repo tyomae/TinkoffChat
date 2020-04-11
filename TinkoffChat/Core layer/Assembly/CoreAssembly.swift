@@ -11,7 +11,7 @@ import Foundation
 protocol ICoreAssembly {
     
     var coreDataStack: CoreDataStackProtocol { get }
-    var channelService: ChannelServiceProtocol { get }
+//    var channelService: ChannelServiceProtocol { get }
     var messageService: MessageServiceProtocol { get }
     var conversationRequester: ConversationFetchRequesterProtocol { get }
     var messageRequester: MessageFetchRequesterProtocol { get }
@@ -19,9 +19,10 @@ protocol ICoreAssembly {
 
 class CoreAssembly: ICoreAssembly {
     
-    var coreDataStack: CoreDataStackProtocol = CoreDataStack.shared
-    var channelService: ChannelServiceProtocol = ChannelService.shared
+    var coreDataStack: CoreDataStackProtocol = CoreDataStack()
+//    var channelService: ChannelServiceProtocol = ChannelService.shared
     var messageService: MessageServiceProtocol = MessageService(channelID: "")//------
     var conversationRequester: ConversationFetchRequesterProtocol = ConversationFetchRequester()
     var messageRequester: MessageFetchRequesterProtocol = MessageFetchRequester()
 }
+

@@ -40,6 +40,7 @@
 		EE46F54F2440DBD700A94F27 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46F5482440DBD700A94F27 /* DataManager.swift */; };
 		EE46F5502440DBD700A94F27 /* GCDDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46F5492440DBD700A94F27 /* GCDDataManager.swift */; };
 		EE46F5512440DBD700A94F27 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46F54A2440DBD700A94F27 /* AsyncOperation.swift */; };
+		EE7A79ED2443704200FF66E0 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7A79EC2443704200FF66E0 /* ServiceAssembly.swift */; };
 		EE93901C243795A400B4D1C9 /* MessageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93901B243795A400B4D1C9 /* MessageEntity.swift */; };
 		EE9390202437982200B4D1C9 /* MessageFetchRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93901F2437982200B4D1C9 /* MessageFetchRequester.swift */; };
 		EEC1D79F2411174000CA961E /* TinkoffChat_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = EEC1D79D2411174000CA961E /* TinkoffChat_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -124,6 +125,7 @@
 		EE46F5482440DBD700A94F27 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		EE46F5492440DBD700A94F27 /* GCDDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDDataManager.swift; sourceTree = "<group>"; };
 		EE46F54A2440DBD700A94F27 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		EE7A79EC2443704200FF66E0 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
 		EE93901B243795A400B4D1C9 /* MessageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageEntity.swift; sourceTree = "<group>"; };
 		EE93901F2437982200B4D1C9 /* MessageFetchRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFetchRequester.swift; sourceTree = "<group>"; };
 		EEC1D79B2411174000CA961E /* TinkoffChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinkoffChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,7 +182,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		EE0077DD244228E400573CD5 /* CoreData */ = {
+		EE0077DD244228E400573CD5 /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
 				EE2560862440D9A6005BEFEB /* CoreDataModel.xcdatamodeld */,
@@ -188,7 +190,7 @@
 				EEE269082437B0DB00A42C68 /* Message */,
 				EEE269072437B0C500A42C68 /* AppUser */,
 			);
-			path = CoreData;
+			path = CoreDataModels;
 			sourceTree = "<group>";
 		};
 		EE092C4923F5C91500B30E08 = {
@@ -247,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				EE46F5572440E55B00A94F27 /* Modules */,
-				EE46F5582440E58400A94F27 /* Assembly */,
 			);
 			path = "Presentation layer";
 			sourceTree = "<group>";
@@ -255,8 +256,8 @@
 		EE46F5432440DBD700A94F27 /* Service layer */ = {
 			isa = PBXGroup;
 			children = (
-				EE0077DD244228E400573CD5 /* CoreData */,
 				EE46F5652440E7C300A94F27 /* Services */,
+				EE0077DD244228E400573CD5 /* CoreDataModels */,
 				EE46F5662440E7CC00A94F27 /* Assembly */,
 			);
 			path = "Service layer";
@@ -274,13 +275,11 @@
 		EE46F5542440DCA600A94F27 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				EE7A79E924432CEC00FF66E0 /* Managers */,
 				EE46F5382440DBCD00A94F27 /* ConfigurableView.swift */,
 				EE42F345242F6A65006463FA /* CoreDataStack.swift */,
-				EE46F5482440DBD700A94F27 /* DataManager.swift */,
 				EE46F5452440DBD700A94F27 /* FirebaseModels.swift */,
 				EE46F54A2440DBD700A94F27 /* AsyncOperation.swift */,
-				EE42F351242F7A1E006463FA /* StorageManager.swift */,
-				EE0077DB24421A5A00573CD5 /* KeyboardManager.swift */,
 			);
 			path = CoreComponents;
 			sourceTree = "<group>";
@@ -301,13 +300,6 @@
 				EE46F5592440E68800A94F27 /* ConversationListViewController */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		EE46F5582440E58400A94F27 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Assembly;
 			sourceTree = "<group>";
 		};
 		EE46F5592440E68800A94F27 /* ConversationListViewController */ = {
@@ -412,18 +404,29 @@
 		EE46F5662440E7CC00A94F27 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
+				EE7A79EC2443704200FF66E0 /* ServiceAssembly.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		EE7A79E924432CEC00FF66E0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EE46F5482440DBD700A94F27 /* DataManager.swift */,
+				EE42F351242F7A1E006463FA /* StorageManager.swift */,
+				EE0077DB24421A5A00573CD5 /* KeyboardManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		EEC1D78E240BD4A600CA961E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EE092C5B23F5C91500B30E08 /* Main.storyboard */,
+				EE092C6323F5C91500B30E08 /* LaunchScreen.storyboard */,
+				EE092C6123F5C91500B30E08 /* Assets.xcassets */,
 				EE092C6623F5C91500B30E08 /* Info.plist */,
 				EEFC95FA243A42DB00FCF60C /* GoogleService-Info.plist */,
-				EE092C5B23F5C91500B30E08 /* Main.storyboard */,
-				EE092C6123F5C91500B30E08 /* Assets.xcassets */,
-				EE092C6323F5C91500B30E08 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				EEE269062437ADF700A42C68 /* ConversationFetchRequester.swift in Sources */,
 				EE0077DC24421A5A00573CD5 /* KeyboardManager.swift in Sources */,
 				EE46F54D2440DBD700A94F27 /* FirebaseModels.swift in Sources */,
+				EE7A79ED2443704200FF66E0 /* ServiceAssembly.swift in Sources */,
 				EE42F348242F7283006463FA /* AppUser.swift in Sources */,
 				EE46F53A2440DBCD00A94F27 /* MessageCellModel.swift in Sources */,
 			);
