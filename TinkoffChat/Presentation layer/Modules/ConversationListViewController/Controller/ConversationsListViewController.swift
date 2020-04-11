@@ -50,26 +50,31 @@ class ConversationsListViewController: UIViewController {
                 return true
             })
             
-            // Sort by date
-            self?.onlineChannels.sort(by: { (channel1, channel2) -> Bool in
-                guard let lastActivity1 = channel1.lastActivity,
-                    let lastActivity2 = channel2.lastActivity else { return true }
-                return lastActivity1 > lastActivity2
-            })
-            self?.historyChannels.sort(by: { (channel1, channel2) -> Bool in
-                guard let lastActivity1 = channel1.lastActivity,
-                    let lastActivity2 = channel2.lastActivity else { return true }
-                return lastActivity1 < lastActivity2
-            })
+            self?.sortChannels()
             
-            // Sort by empty last activity
-            self?.historyChannels.sort(by: { (channel1, channel2) -> Bool in
-                return channel1.lastActivity != nil || channel2.lastActivity != nil
-            })
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }
+    }
+    
+    private func sortChannels() {
+        // Sort by date
+        onlineChannels.sort(by: { (channel1, channel2) -> Bool in
+            guard let lastActivity1 = channel1.lastActivity,
+                let lastActivity2 = channel2.lastActivity else { return true }
+            return lastActivity1 > lastActivity2
+        })
+        historyChannels.sort(by: { (channel1, channel2) -> Bool in
+            guard let lastActivity1 = channel1.lastActivity,
+                let lastActivity2 = channel2.lastActivity else { return true }
+            return lastActivity1 < lastActivity2
+        })
+        
+        // Sort by empty last activity
+        historyChannels.sort(by: { (channel1, channel2) -> Bool in
+            return channel1.lastActivity != nil || channel2.lastActivity != nil
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -107,4 +112,3 @@ class ConversationsListViewController: UIViewController {
         self.present(newChannelAlert, animated: true, completion: nil)
     }
 }
-

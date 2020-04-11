@@ -13,16 +13,10 @@ class ConversationViewController: UIViewController {
     var channelIdentifier = ""
     lazy var msgService: MessageServiceProtocol = MessageService(channelID: channelIdentifier)
     
+    private let keyboardManager = KeyboardManager()
+    
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendMessageButton: UIButton!
-    
-    @IBAction func sendMessageTapped(_ sender: UIButton) {
-        guard let messageText = messageTextField.text, !messageText.isEmpty else { return }
-        msgService.sendMessage(content: messageText)
-        messageTextField.text = ""
-    }
-    
-    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(UINib(nibName: String(describing: MessageeCell.self),
@@ -31,8 +25,13 @@ class ConversationViewController: UIViewController {
         }
     }
     
-    var messages = [Message]()
+    @IBAction func sendMessageTapped(_ sender: UIButton) {
+        guard let messageText = messageTextField.text, !messageText.isEmpty else { return }
+        msgService.sendMessage(content: messageText)
+        messageTextField.text = ""
+    }
     
+    var messages = [Message]()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -59,43 +58,27 @@ class ConversationViewController: UIViewController {
             self.tableViewScrollToBottom(animated: messagesShowsFirst)
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)  
-    }
-    
-    @objc func keyboardWillAppear(notification: NSNotification) {
-        if (self.view.frame.origin.y < 0) {
-            return
-        }
-        if let userInfo = notification.userInfo {
-            if let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                UIView.animate(withDuration: 0.5, delay: 0,
-                               options: .allowAnimatedContent, animations: {
-                                self.view.frame.size.height -= keyboardSize.height
-                                
+        keyboardManager.keyboardWillChangeState = { [weak self] state, keyboardSize in
+            guard let self = self else { return }
+            switch state {
+            case .show where self.view.frame.origin.y < 0:
+                return
+            case .hide where self.view.frame.origin.y >= 0:
+                return
+            default: break
+            }
+            UIView.animate(withDuration: 0.5, delay: 0,
+                           options: .allowAnimatedContent, animations: { [weak self] in
+                            switch state {
+                            case .show:
+                                self?.view.frame.origin.y -= keyboardSize.height
+                            case .hide:
+                                self?.view.frame.origin.y += keyboardSize.height
+                            }
                 }, completion: { _ in
                     self.tableViewScrollToBottom(animated: true)
                     
-                })
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if (self.view.frame.origin.y >= 0) {
-            return
-        }
-        if let userInfo = notification.userInfo {
-            if let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                UIView.animate(withDuration: 0.5, delay: 0,
-                               options: .allowAnimatedContent, animations: {
-                                self.view.frame.size.height += keyboardSize.height
-                                
-                }, completion: { _ in
-                    self.tableViewScrollToBottom(animated: true)
-                    
-                })
-            }
+            })
         }
     }
     

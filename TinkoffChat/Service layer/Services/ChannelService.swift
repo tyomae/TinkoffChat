@@ -18,6 +18,7 @@ protocol ChannelServiceProtocol: class {
 
 class ChannelService: NSObject, ChannelServiceProtocol {
     
+    static let shared = ChannelService()
     private let coreDataStack = CoreDataStack()
     private let conversationFetchRequester = ConversationFetchRequester()
     

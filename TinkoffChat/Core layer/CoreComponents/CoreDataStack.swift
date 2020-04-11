@@ -9,8 +9,16 @@
 import Foundation
 import CoreData
 
-class CoreDataStack {
+protocol CoreDataStackProtocol {
     
+    func performSave(context: NSManagedObjectContext, completionHandler : ((String?) -> Void)?)
+    var mainContext: NSManagedObjectContext { get }
+    var saveContext: NSManagedObjectContext { get }
+}
+
+class CoreDataStack: CoreDataStackProtocol {
+    
+    static let shared = CoreDataStack()
     private lazy var storeURL: URL = {
         let documentsUrl = FileManager.default.urls(for: .documentDirectory,
                                                     in: .userDomainMask).first!

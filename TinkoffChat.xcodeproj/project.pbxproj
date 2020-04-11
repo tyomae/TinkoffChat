@@ -10,9 +10,11 @@
 		B6308D2838B76E6A405A0D72 /* Pods_TinkoffChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626C647BF232694FEE0E5D14 /* Pods_TinkoffChat.framework */; };
 		EE0077CE2441C43800573CD5 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0077CC2441C43800573CD5 /* MessageService.swift */; };
 		EE0077CF2441C43800573CD5 /* ChannelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0077CD2441C43800573CD5 /* ChannelService.swift */; };
-		EE0077D22441C74D00573CD5 /* ConversationList TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0077D12441C74D00573CD5 /* ConversationList TableView.swift */; };
-		EE0077D52441CADB00573CD5 /* Conversation TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0077D42441CADB00573CD5 /* Conversation TableView.swift */; };
-		EE0077D82441CBDB00573CD5 /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0077D72441CBDB00573CD5 /* ImagePickerDelegate.swift */; };
+		EE0077D22441C74D00573CD5 /* ConversationListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0077D12441C74D00573CD5 /* ConversationListDataSource.swift */; };
+		EE0077D52441CADB00573CD5 /* ConversationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0077D42441CADB00573CD5 /* ConversationDataSource.swift */; };
+		EE0077D82441CBDB00573CD5 /* ProfileImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0077D72441CBDB00573CD5 /* ProfileImagePickerDelegate.swift */; };
+		EE0077DA2441F87D00573CD5 /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0077D92441F87D00573CD5 /* CoreAssembly.swift */; };
+		EE0077DC24421A5A00573CD5 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0077DB24421A5A00573CD5 /* KeyboardManager.swift */; };
 		EE092C5623F5C91500B30E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE092C5523F5C91500B30E08 /* AppDelegate.swift */; };
 		EE092C5D23F5C91500B30E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE092C5B23F5C91500B30E08 /* Main.storyboard */; };
 		EE092C6223F5C91500B30E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE092C6123F5C91500B30E08 /* Assets.xcassets */; };
@@ -87,9 +89,11 @@
 		B64473E398CFD9BC79F48947 /* Pods-TinkoffChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffChat.release.xcconfig"; path = "Target Support Files/Pods-TinkoffChat/Pods-TinkoffChat.release.xcconfig"; sourceTree = "<group>"; };
 		EE0077CC2441C43800573CD5 /* MessageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		EE0077CD2441C43800573CD5 /* ChannelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelService.swift; sourceTree = "<group>"; };
-		EE0077D12441C74D00573CD5 /* ConversationList TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConversationList TableView.swift"; sourceTree = "<group>"; };
-		EE0077D42441CADB00573CD5 /* Conversation TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conversation TableView.swift"; sourceTree = "<group>"; };
-		EE0077D72441CBDB00573CD5 /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
+		EE0077D12441C74D00573CD5 /* ConversationListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListDataSource.swift; sourceTree = "<group>"; };
+		EE0077D42441CADB00573CD5 /* ConversationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationDataSource.swift; sourceTree = "<group>"; };
+		EE0077D72441CBDB00573CD5 /* ProfileImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImagePickerDelegate.swift; sourceTree = "<group>"; };
+		EE0077D92441F87D00573CD5 /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
+		EE0077DB24421A5A00573CD5 /* KeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		EE092C5223F5C91500B30E08 /* TinkoffChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE092C5523F5C91500B30E08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE092C5C23F5C91500B30E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -176,28 +180,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		EE0077D02441C71200573CD5 /* extension */ = {
+		EE0077DD244228E400573CD5 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				EE0077D12441C74D00573CD5 /* ConversationList TableView.swift */,
+				EE2560862440D9A6005BEFEB /* CoreDataModel.xcdatamodeld */,
+				EEE269092437B0F000A42C68 /* Conversation */,
+				EEE269082437B0DB00A42C68 /* Message */,
+				EEE269072437B0C500A42C68 /* AppUser */,
 			);
-			path = extension;
-			sourceTree = "<group>";
-		};
-		EE0077D32441CABE00573CD5 /* extension */ = {
-			isa = PBXGroup;
-			children = (
-				EE0077D42441CADB00573CD5 /* Conversation TableView.swift */,
-			);
-			path = extension;
-			sourceTree = "<group>";
-		};
-		EE0077D62441CBBE00573CD5 /* extension */ = {
-			isa = PBXGroup;
-			children = (
-				EE0077D72441CBDB00573CD5 /* ImagePickerDelegate.swift */,
-			);
-			path = extension;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		EE092C4923F5C91500B30E08 = {
@@ -261,39 +252,21 @@
 			path = "Presentation layer";
 			sourceTree = "<group>";
 		};
-		EE46F5372440DBCD00A94F27 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				EE46F5382440DBCD00A94F27 /* ConfigurableView.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		EE46F5432440DBD700A94F27 /* Service layer */ = {
 			isa = PBXGroup;
 			children = (
+				EE0077DD244228E400573CD5 /* CoreData */,
 				EE46F5652440E7C300A94F27 /* Services */,
 				EE46F5662440E7CC00A94F27 /* Assembly */,
 			);
 			path = "Service layer";
 			sourceTree = "<group>";
 		};
-		EE46F5442440DBD700A94F27 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				EE46F5452440DBD700A94F27 /* FirebaseModels.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		EE46F5462440DBD700A94F27 /* DataManagers */ = {
 			isa = PBXGroup;
 			children = (
 				EE46F5472440DBD700A94F27 /* OperationDataManager.swift */,
-				EE46F5482440DBD700A94F27 /* DataManager.swift */,
 				EE46F5492440DBD700A94F27 /* GCDDataManager.swift */,
-				EE46F54A2440DBD700A94F27 /* AsyncOperation.swift */,
-				EE42F351242F7A1E006463FA /* StorageManager.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -301,13 +274,13 @@
 		EE46F5542440DCA600A94F27 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
-				EE0077CD2441C43800573CD5 /* ChannelService.swift */,
-				EE0077CC2441C43800573CD5 /* MessageService.swift */,
+				EE46F5382440DBCD00A94F27 /* ConfigurableView.swift */,
 				EE42F345242F6A65006463FA /* CoreDataStack.swift */,
-				EE2560862440D9A6005BEFEB /* CoreDataModel.xcdatamodeld */,
-				EEE269092437B0F000A42C68 /* Conversation */,
-				EEE269082437B0DB00A42C68 /* Message */,
-				EEE269072437B0C500A42C68 /* AppUser */,
+				EE46F5482440DBD700A94F27 /* DataManager.swift */,
+				EE46F5452440DBD700A94F27 /* FirebaseModels.swift */,
+				EE46F54A2440DBD700A94F27 /* AsyncOperation.swift */,
+				EE42F351242F7A1E006463FA /* StorageManager.swift */,
+				EE0077DB24421A5A00573CD5 /* KeyboardManager.swift */,
 			);
 			path = CoreComponents;
 			sourceTree = "<group>";
@@ -315,6 +288,7 @@
 		EE46F5552440DD9900A94F27 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
+				EE0077D92441F87D00573CD5 /* CoreAssembly.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -325,7 +299,6 @@
 				EE46F55B2440E6B700A94F27 /* ProfileViewController */,
 				EE46F55A2440E6AB00A94F27 /* ConversationViewController */,
 				EE46F5592440E68800A94F27 /* ConversationListViewController */,
-				EE46F5372440DBCD00A94F27 /* Protocols */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -360,24 +333,16 @@
 		EE46F55B2440E6B700A94F27 /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
-				EE46F55C2440E6C200A94F27 /* Model */,
 				EE46F55E2440E6D400A94F27 /* Controller */,
 			);
 			path = ProfileViewController;
-			sourceTree = "<group>";
-		};
-		EE46F55C2440E6C200A94F27 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		EE46F55E2440E6D400A94F27 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				EE46F5302440DBCD00A94F27 /* ProfileViewController.swift */,
-				EE0077D62441CBBE00573CD5 /* extension */,
+				EE0077D72441CBDB00573CD5 /* ProfileImagePickerDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -386,7 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				EE46F5312440DBCD00A94F27 /* ConversationViewController.swift */,
-				EE0077D32441CABE00573CD5 /* extension */,
+				EE0077D42441CADB00573CD5 /* ConversationDataSource.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -412,7 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				EE46F52F2440DBCD00A94F27 /* ConversationsListViewController.swift */,
-				EE0077D02441C71200573CD5 /* extension */,
+				EE0077D12441C74D00573CD5 /* ConversationListDataSource.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -437,7 +402,8 @@
 		EE46F5652440E7C300A94F27 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				EE46F5442440DBD700A94F27 /* Models */,
+				EE0077CD2441C43800573CD5 /* ChannelService.swift */,
+				EE0077CC2441C43800573CD5 /* MessageService.swift */,
 				EE46F5462440DBD700A94F27 /* DataManagers */,
 			);
 			path = Services;
@@ -692,12 +658,13 @@
 			files = (
 				EE42F352242F7A1E006463FA /* StorageManager.swift in Sources */,
 				EE42F346242F6A65006463FA /* CoreDataStack.swift in Sources */,
-				EE0077D22441C74D00573CD5 /* ConversationList TableView.swift in Sources */,
+				EE0077D22441C74D00573CD5 /* ConversationListDataSource.swift in Sources */,
 				EE42F34A242F737A006463FA /* AppUser+CoreDataProperties.swift in Sources */,
 				EE46F54E2440DBD700A94F27 /* OperationDataManager.swift in Sources */,
 				EE9390202437982200B4D1C9 /* MessageFetchRequester.swift in Sources */,
 				EE46F54F2440DBD700A94F27 /* DataManager.swift in Sources */,
 				EE2560892440D9A6005BEFEB /* CoreDataModel.xcdatamodeld in Sources */,
+				EE0077DA2441F87D00573CD5 /* CoreAssembly.swift in Sources */,
 				EE46F5422440DBCD00A94F27 /* ConfigurableView.swift in Sources */,
 				EEE269022437AD8200A42C68 /* ConversationEntity.swift in Sources */,
 				EE46F53C2440DBCD00A94F27 /* ProfileViewController.swift in Sources */,
@@ -710,13 +677,14 @@
 				EE092C5623F5C91500B30E08 /* AppDelegate.swift in Sources */,
 				EE93901C243795A400B4D1C9 /* MessageEntity.swift in Sources */,
 				EE46F5512440DBD700A94F27 /* AsyncOperation.swift in Sources */,
-				EE0077D52441CADB00573CD5 /* Conversation TableView.swift in Sources */,
+				EE0077D52441CADB00573CD5 /* ConversationDataSource.swift in Sources */,
 				EE46F5502440DBD700A94F27 /* GCDDataManager.swift in Sources */,
 				EE0077CF2441C43800573CD5 /* ChannelService.swift in Sources */,
 				EE0077CE2441C43800573CD5 /* MessageService.swift in Sources */,
-				EE0077D82441CBDB00573CD5 /* ImagePickerDelegate.swift in Sources */,
+				EE0077D82441CBDB00573CD5 /* ProfileImagePickerDelegate.swift in Sources */,
 				EE46F53B2440DBCD00A94F27 /* ConversationsListViewController.swift in Sources */,
 				EEE269062437ADF700A42C68 /* ConversationFetchRequester.swift in Sources */,
+				EE0077DC24421A5A00573CD5 /* KeyboardManager.swift in Sources */,
 				EE46F54D2440DBD700A94F27 /* FirebaseModels.swift in Sources */,
 				EE42F348242F7283006463FA /* AppUser.swift in Sources */,
 				EE46F53A2440DBCD00A94F27 /* MessageCellModel.swift in Sources */,

@@ -15,6 +15,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     var storageManager: StorageManagerProtocol = StorageManager()
     var useDataManager: Bool = true
     
+    private let keyboardManager = KeyboardManager()
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var addPhotoButton: UIButton!
@@ -34,15 +36,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         }
     }
     @IBOutlet weak var savingDataActivityIndicator: UIActivityIndicatorView!
-    
-    @IBAction func SaveButtonToched(_ sender: UIButton) {
-        self.view.endEditing(true)
-        useDataManager = true
-        saveData()
-    }
-    @IBAction func editButtonToched(_ sender: UIButton) {
-        putViewIntoEditingMode()
-    }
     
     
     override func viewDidLayoutSubviews() {
@@ -65,8 +58,40 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         imagePicker?.delegate = self
         
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)        
+        
+        keyboardManager.keyboardWillChangeState = { [weak self] state, keyboardSize in
+            guard let self = self else { return }
+            switch state {
+            case .show where self.view.frame.origin.y < 0:
+                return
+            case .hide where self.view.frame.origin.y >= 0:
+                return
+            default: break
+            }
+            UIView.animate(withDuration: 0.5, delay: 0,
+                           options: .allowAnimatedContent, animations: { [weak self] in
+                            switch state {
+                            case .show:
+                                self?.view.frame.origin.y -= keyboardSize.height
+                            case .hide:
+                                self?.view.frame.origin.y += keyboardSize.height
+                            }
+            })
+        }
+    }
+    
+    @IBAction func hideProfileVC(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveButtonTouched(_ sender: UIButton) {
+        view.endEditing(true)
+        useDataManager = true
+        saveData()
+    }
+    
+    @IBAction func editButtonToched(_ sender: UIButton) {
+        putViewIntoEditingMode()
     }
     
     @IBAction func addPhotoButtonDidTap(_ sender: UIButton) {
@@ -94,15 +119,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         print("Выбери изображение профиля")
     }
     
-    @IBAction func hideProfileVC(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    private func printFrame() {
-        print(editButton.frame)
-    }
-    
     func saveData() {
-        
         savingDataActivityIndicator.startAnimating()
         buttonsEnabled(are: false)
         addPhotoButton.isEnabled = false
@@ -132,20 +149,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         }
     }
     
-    func processSaving(error: Error?) {
-        
-        savingDataActivityIndicator.stopAnimating()
-        
-        if (error != nil) {
-            showDataWasNotSavedAlert()
-        }
-        else {
-            showDataSavedAlert()
-        }
-    }
-    
     func loadData() {
-        
         savingDataActivityIndicator.startAnimating()
         let appUser = storageManager.loadAppUser()
         
@@ -163,54 +167,30 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         self.savingDataActivityIndicator.stopAnimating()
     }
     
-    func processLoading(userInfo: UserInfo) {
-        
-        savingDataActivityIndicator.stopAnimating()
-        
-        if let name = userInfo.userName {
-            self.nameTextField.text = name
-        }
-        if let description = userInfo.userDescription {
-            self.descriptionTextView.text = description
-        }
-        if let photo = userInfo.userPhoto {
-            self.profileImage.image = photo
-        }
-    }
-    
     func showDataSavedAlert() {
-        
         let dataSavedAlert = UIAlertController(title: "Данные сохранены", message: nil, preferredStyle: .alert)
-        
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             self.putViewIntoNotEditingMode()
             self.loadData()
         }
-        
         dataSavedAlert.addAction(okAction)
-        self.present(dataSavedAlert, animated: true, completion: nil)
+        present(dataSavedAlert, animated: true, completion: nil)
     }
     
     func showDataWasNotSavedAlert() {
-        
         let dataWasNotSavedAlert = UIAlertController(title: "Не удалось сохранить данные", message: nil, preferredStyle: .alert)
-        
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             self.putViewIntoNotEditingMode()
             self.loadData()
         }
-        
         let repeatAction = UIAlertAction(title: "Повторить", style: .default) { _ in
             self.saveData()
         }
         
         dataWasNotSavedAlert.addAction(okAction)
         dataWasNotSavedAlert.addAction(repeatAction)
-        self.present(dataWasNotSavedAlert, animated: true, completion: nil)
+        present(dataWasNotSavedAlert, animated: true, completion: nil)
     }
-}
-
-extension ProfileViewController {
     
     func putViewIntoEditingMode(){
         userInfoChanged = (false, false, false)
@@ -233,7 +213,6 @@ extension ProfileViewController {
         self.view.endEditing(true)
         editButton.isHidden = false
         buttonsHidden(are: true)
-        
         
         descriptionTextView.textContainer.lineFragmentPadding = 0
         descriptionTextView.textContainerInset = .init(top: 3, left: 0, bottom: 1, right: 5)
@@ -271,43 +250,15 @@ extension ProfileViewController {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n") {
-            self.view.endEditing(true)
+            view.endEditing(true)
             return false
         }
         return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        view.endEditing(true)
         return true
-    }
-    
-    @objc func keyboardWillAppear(notification: NSNotification) {
-        if (self.view.frame.origin.y < 0) {
-            return
-        }
-        if let userInfo = notification.userInfo {
-            if let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                UIView.animate(withDuration: 0.5, delay: 0,
-                               options: .allowAnimatedContent, animations: {
-                                self.view.frame.origin.y -= keyboardSize.height
-                }, completion: nil)
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if (self.view.frame.origin.y >= 0) {
-            return
-        }
-        if let userInfo = notification.userInfo {
-            if let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                UIView.animate(withDuration: 0.5, delay: 0,
-                               options: .allowAnimatedContent, animations: {
-                                self.view.frame.origin.y += keyboardSize.height
-                }, completion: nil)
-            }
-        }
     }
 }
 
