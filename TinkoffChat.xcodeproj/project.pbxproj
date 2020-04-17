@@ -21,6 +21,7 @@
 		EE092C6523F5C91500B30E08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE092C6323F5C91500B30E08 /* LaunchScreen.storyboard */; };
 		EE092C7023F5C91500B30E08 /* TinkoffChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE092C6F23F5C91500B30E08 /* TinkoffChatTests.swift */; };
 		EE2560892440D9A6005BEFEB /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE2560862440D9A6005BEFEB /* CoreDataModel.xcdatamodeld */; };
+		EE3F474A2449BC2F00D8C8DF /* LoaderImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F47492449BC2F00D8C8DF /* LoaderImageViewController.swift */; };
 		EE42F346242F6A65006463FA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42F345242F6A65006463FA /* CoreDataStack.swift */; };
 		EE42F348242F7283006463FA /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42F347242F7283006463FA /* AppUser.swift */; };
 		EE42F34A242F737A006463FA /* AppUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42F349242F737A006463FA /* AppUser+CoreDataProperties.swift */; };
@@ -43,6 +44,20 @@
 		EE7A79ED2443704200FF66E0 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7A79EC2443704200FF66E0 /* ServiceAssembly.swift */; };
 		EE93901C243795A400B4D1C9 /* MessageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93901B243795A400B4D1C9 /* MessageEntity.swift */; };
 		EE9390202437982200B4D1C9 /* MessageFetchRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93901F2437982200B4D1C9 /* MessageFetchRequester.swift */; };
+		EEB5B5A82449E2230079491A /* DownloadImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB5B5A72449E2230079491A /* DownloadImageCollectionViewCell.swift */; };
+		EEB5B5AA2449E3BF0079491A /* LoaderImageVCDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB5B5A92449E3BF0079491A /* LoaderImageVCDataSource.swift */; };
+		EEB5B5AC2449E3FE0079491A /* LoaderImageVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB5B5AB2449E3FE0079491A /* LoaderImageVCDelegate.swift */; };
+		EEB5B5B02449E4530079491A /* LoaderImageVCFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB5B5AF2449E4530079491A /* LoaderImageVCFlowLayout.swift */; };
+		EEB5B5B32449EB4A0079491A /* RequestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB5B5B22449EB4A0079491A /* RequestConfiguration.swift */; };
+		EEB5B5B52449EBA60079491A /* ImageRequestStorageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB5B5B42449EBA60079491A /* ImageRequestStorageParser.swift */; };
+		EEB5B5B72449EBF40079491A /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB5B5B62449EBF40079491A /* ImageRequest.swift */; };
+		EEB5B5B92449EC870079491A /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB5B5B82449EC870079491A /* ImageProvider.swift */; };
+		EEB5B5BB2449ECC70079491A /* RequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB5B5BA2449ECC70079491A /* RequestSender.swift */; };
+		EEB5B5BD2449ED0B0079491A /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB5B5BC2449ED0B0079491A /* RequestFactory.swift */; };
+		EEB5B5BF2449ED320079491A /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB5B5BE2449ED320079491A /* Requests.swift */; };
+		EEB5B5C22449EDF40079491A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB5B5C12449EDF40079491A /* NetworkManager.swift */; };
+		EEB5B5C42449EE480079491A /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB5B5C32449EE480079491A /* ImageDownloadManager.swift */; };
+		EEB5B5C62449EEAC0079491A /* LoaderImagerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB5B5C52449EEAC0079491A /* LoaderImagerInteractor.swift */; };
 		EEC1D79F2411174000CA961E /* TinkoffChat_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = EEC1D79D2411174000CA961E /* TinkoffChat_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEC1D7A22411174000CA961E /* TinkoffChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEC1D79B2411174000CA961E /* TinkoffChat.framework */; };
 		EEC1D7A32411174000CA961E /* TinkoffChat.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EEC1D79B2411174000CA961E /* TinkoffChat.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -106,6 +121,7 @@
 		EE092C7123F5C91500B30E08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE2560872440D9A6005BEFEB /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		EE2560882440D9A6005BEFEB /* CoreDataModel2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel2.xcdatamodel; sourceTree = "<group>"; };
+		EE3F47492449BC2F00D8C8DF /* LoaderImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderImageViewController.swift; sourceTree = "<group>"; };
 		EE42F345242F6A65006463FA /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		EE42F347242F7283006463FA /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		EE42F349242F737A006463FA /* AppUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -128,6 +144,20 @@
 		EE7A79EC2443704200FF66E0 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
 		EE93901B243795A400B4D1C9 /* MessageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageEntity.swift; sourceTree = "<group>"; };
 		EE93901F2437982200B4D1C9 /* MessageFetchRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFetchRequester.swift; sourceTree = "<group>"; };
+		EEB5B5A72449E2230079491A /* DownloadImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEB5B5A92449E3BF0079491A /* LoaderImageVCDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderImageVCDataSource.swift; sourceTree = "<group>"; };
+		EEB5B5AB2449E3FE0079491A /* LoaderImageVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderImageVCDelegate.swift; sourceTree = "<group>"; };
+		EEB5B5AF2449E4530079491A /* LoaderImageVCFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderImageVCFlowLayout.swift; sourceTree = "<group>"; };
+		EEB5B5B22449EB4A0079491A /* RequestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConfiguration.swift; sourceTree = "<group>"; };
+		EEB5B5B42449EBA60079491A /* ImageRequestStorageParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestStorageParser.swift; sourceTree = "<group>"; };
+		EEB5B5B62449EBF40079491A /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
+		EEB5B5B82449EC870079491A /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
+		EEB5B5BA2449ECC70079491A /* RequestSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSender.swift; sourceTree = "<group>"; };
+		EEB5B5BC2449ED0B0079491A /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		EEB5B5BE2449ED320079491A /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		EEB5B5C12449EDF40079491A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		EEB5B5C32449EE480079491A /* ImageDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadManager.swift; sourceTree = "<group>"; };
+		EEB5B5C52449EEAC0079491A /* LoaderImagerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderImagerInteractor.swift; sourceTree = "<group>"; };
 		EEC1D79B2411174000CA961E /* TinkoffChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinkoffChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC1D79D2411174000CA961E /* TinkoffChat_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TinkoffChat_iOS.h; sourceTree = "<group>"; };
 		EEC1D79E2411174000CA961E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -236,6 +266,16 @@
 			path = TinkoffChatTests;
 			sourceTree = "<group>";
 		};
+		EE3F47482449BC0100D8C8DF /* LoaderImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EEB5B5A52449E1DE0079491A /* Model */,
+				EEB5B5A62449E1E50079491A /* View */,
+				EEB5B5A42449E1CF0079491A /* Controller */,
+			);
+			path = LoaderImageViewController;
+			sourceTree = "<group>";
+		};
 		EE42F342242F6A06006463FA /* Core layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +315,7 @@
 		EE46F5542440DCA600A94F27 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				EEB5B5B12449EA170079491A /* Network */,
 				EE7A79E924432CEC00FF66E0 /* Managers */,
 				EE46F5382440DBCD00A94F27 /* ConfigurableView.swift */,
 				EE42F345242F6A65006463FA /* CoreDataStack.swift */,
@@ -298,6 +339,7 @@
 				EE46F55B2440E6B700A94F27 /* ProfileViewController */,
 				EE46F55A2440E6AB00A94F27 /* ConversationViewController */,
 				EE46F5592440E68800A94F27 /* ConversationListViewController */,
+				EE3F47482449BC0100D8C8DF /* LoaderImageViewController */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -394,9 +436,10 @@
 		EE46F5652440E7C300A94F27 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EEB5B5C02449EDD30079491A /* Network */,
+				EE46F5462440DBD700A94F27 /* DataManagers */,
 				EE0077CD2441C43800573CD5 /* ChannelService.swift */,
 				EE0077CC2441C43800573CD5 /* MessageService.swift */,
-				EE46F5462440DBD700A94F27 /* DataManagers */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -417,6 +460,56 @@
 				EE0077DB24421A5A00573CD5 /* KeyboardManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		EEB5B5A42449E1CF0079491A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EE3F47492449BC2F00D8C8DF /* LoaderImageViewController.swift */,
+				EEB5B5A92449E3BF0079491A /* LoaderImageVCDataSource.swift */,
+				EEB5B5AB2449E3FE0079491A /* LoaderImageVCDelegate.swift */,
+				EEB5B5AF2449E4530079491A /* LoaderImageVCFlowLayout.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EEB5B5A52449E1DE0079491A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EEB5B5B62449EBF40079491A /* ImageRequest.swift */,
+				EEB5B5C52449EEAC0079491A /* LoaderImagerInteractor.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EEB5B5A62449E1E50079491A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEB5B5A72449E2230079491A /* DownloadImageCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EEB5B5B12449EA170079491A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EEB5B5B22449EB4A0079491A /* RequestConfiguration.swift */,
+				EEB5B5B42449EBA60079491A /* ImageRequestStorageParser.swift */,
+				EEB5B5B82449EC870079491A /* ImageProvider.swift */,
+				EEB5B5BA2449ECC70079491A /* RequestSender.swift */,
+				EEB5B5BC2449ED0B0079491A /* RequestFactory.swift */,
+				EEB5B5BE2449ED320079491A /* Requests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EEB5B5C02449EDD30079491A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EEB5B5C12449EDF40079491A /* NetworkManager.swift */,
+				EEB5B5C32449EE480079491A /* ImageDownloadManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		EEC1D78E240BD4A600CA961E /* Resources */ = {
@@ -659,24 +752,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEB5B5C22449EDF40079491A /* NetworkManager.swift in Sources */,
+				EEB5B5BD2449ED0B0079491A /* RequestFactory.swift in Sources */,
 				EE42F352242F7A1E006463FA /* StorageManager.swift in Sources */,
+				EEB5B5BB2449ECC70079491A /* RequestSender.swift in Sources */,
+				EEB5B5BF2449ED320079491A /* Requests.swift in Sources */,
 				EE42F346242F6A65006463FA /* CoreDataStack.swift in Sources */,
 				EE0077D22441C74D00573CD5 /* ConversationListDataSource.swift in Sources */,
 				EE42F34A242F737A006463FA /* AppUser+CoreDataProperties.swift in Sources */,
+				EEB5B5C42449EE480079491A /* ImageDownloadManager.swift in Sources */,
 				EE46F54E2440DBD700A94F27 /* OperationDataManager.swift in Sources */,
 				EE9390202437982200B4D1C9 /* MessageFetchRequester.swift in Sources */,
+				EEB5B5B32449EB4A0079491A /* RequestConfiguration.swift in Sources */,
+				EEB5B5AA2449E3BF0079491A /* LoaderImageVCDataSource.swift in Sources */,
+				EEB5B5B72449EBF40079491A /* ImageRequest.swift in Sources */,
+				EEB5B5B52449EBA60079491A /* ImageRequestStorageParser.swift in Sources */,
+				EEB5B5B02449E4530079491A /* LoaderImageVCFlowLayout.swift in Sources */,
 				EE46F54F2440DBD700A94F27 /* DataManager.swift in Sources */,
 				EE2560892440D9A6005BEFEB /* CoreDataModel.xcdatamodeld in Sources */,
 				EE0077DA2441F87D00573CD5 /* CoreAssembly.swift in Sources */,
 				EE46F5422440DBCD00A94F27 /* ConfigurableView.swift in Sources */,
 				EEE269022437AD8200A42C68 /* ConversationEntity.swift in Sources */,
+				EE3F474A2449BC2F00D8C8DF /* LoaderImageViewController.swift in Sources */,
 				EE46F53C2440DBCD00A94F27 /* ProfileViewController.swift in Sources */,
+				EEB5B5A82449E2230079491A /* DownloadImageCollectionViewCell.swift in Sources */,
 				EEE269002437A94E00A42C68 /* MessageEntity+CoreDataProperties.swift in Sources */,
+				EEB5B5AC2449E3FE0079491A /* LoaderImageVCDelegate.swift in Sources */,
 				EE46F53E2440DBCD00A94F27 /* ConversationCell.swift in Sources */,
 				EEE269042437AD9C00A42C68 /* ComversationEntity+CoreDataProperties.swift in Sources */,
 				EE46F5392440DBCD00A94F27 /* ConfigurationCellModel.swift in Sources */,
 				EE46F53D2440DBCD00A94F27 /* ConversationViewController.swift in Sources */,
 				EE46F5402440DBCD00A94F27 /* MessageeCell.swift in Sources */,
+				EEB5B5B92449EC870079491A /* ImageProvider.swift in Sources */,
 				EE092C5623F5C91500B30E08 /* AppDelegate.swift in Sources */,
 				EE93901C243795A400B4D1C9 /* MessageEntity.swift in Sources */,
 				EE46F5512440DBD700A94F27 /* AsyncOperation.swift in Sources */,
@@ -691,6 +798,7 @@
 				EE46F54D2440DBD700A94F27 /* FirebaseModels.swift in Sources */,
 				EE7A79ED2443704200FF66E0 /* ServiceAssembly.swift in Sources */,
 				EE42F348242F7283006463FA /* AppUser.swift in Sources */,
+				EEB5B5C62449EEAC0079491A /* LoaderImagerInteractor.swift in Sources */,
 				EE46F53A2440DBCD00A94F27 /* MessageCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

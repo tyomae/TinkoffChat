@@ -107,11 +107,16 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             self.chooseImagePicker(source: .photoLibrary)
         }
         
+        let downloadImage = UIAlertAction(title: "Загрузить изображение", style: .default) { (_) in
+            self.performSegue(withIdentifier: "DownloadImagesSegue", sender: nil)
+        }
+        
         let cancel = UIAlertAction(title: "Отменить", style: .cancel)
         
         actionSheet.addAction(camera)
         actionSheet.addAction(photo)
         actionSheet.addAction(cancel)
+        actionSheet.addAction(downloadImage)
         
         present(actionSheet, animated: true)
         
@@ -258,6 +263,25 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DownloadImagesSegue" {
+            guard let navigationController = segue.destination as? UINavigationController,
+                let loaderImageVC = navigationController.topViewController as? LoaderImageViewController else {
+                super.prepare(for: segue, sender: sender)
+                return
+            }
+            let imageLoaderInteractor = ImageLoaderInteractor(networkManager:  NetworkManager<ImageRequestsStorageParser>(requestSender: RequestSender(), config: RequestsFactory.ImageLoaderFactory.imageDownloaderConfig()),
+            imageDownloadManager: ImageDownloadManager(imageProvider: ImageProvider.shared))
+            imageLoaderInteractor.delegate = loaderImageVC
+            loaderImageVC.imageLoaderInteractor = imageLoaderInteractor
+        } else {
+            super.prepare(for: segue, sender: sender)
+        }
+    }
+    
+    @IBAction func unwindToProfile(segue: UIStoryboardSegue) {
     }
 }
 

@@ -11,18 +11,20 @@ import Foundation
 protocol ICoreAssembly {
     
     var coreDataStack: CoreDataStackProtocol { get }
-//    var channelService: ChannelServiceProtocol { get }
-    var messageService: MessageServiceProtocol { get }
     var conversationRequester: ConversationFetchRequesterProtocol { get }
     var messageRequester: MessageFetchRequesterProtocol { get }
+    var requestSender: IRequestSender { get }
+    var imageDwnldrConfig: RequestConfig<ImageRequestsStorageParser> { get }
+    var imageProvider: IImageProvider { get }
 }
 
 class CoreAssembly: ICoreAssembly {
     
     var coreDataStack: CoreDataStackProtocol = CoreDataStack()
-//    var channelService: ChannelServiceProtocol = ChannelService.shared
-    var messageService: MessageServiceProtocol = MessageService(channelID: "")//------
     var conversationRequester: ConversationFetchRequesterProtocol = ConversationFetchRequester()
     var messageRequester: MessageFetchRequesterProtocol = MessageFetchRequester()
+    lazy var requestSender: IRequestSender = RequestSender()
+    lazy var imageDwnldrConfig = RequestsFactory.ImageLoaderFactory.imageDownloaderConfig()
+    lazy var imageProvider: IImageProvider = ImageProvider.shared
 }
 
