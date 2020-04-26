@@ -12,6 +12,7 @@ class ConversationViewController: UIViewController {
     
     var channelIdentifier = ""
     lazy var msgService: MessageServiceProtocol = MessageService(channelID: channelIdentifier)
+    var sendMessageButtonLocked = false
     
     private let keyboardManager = KeyboardManager()
     
@@ -29,6 +30,10 @@ class ConversationViewController: UIViewController {
         guard let messageText = messageTextField.text, !messageText.isEmpty else { return }
         msgService.sendMessage(content: messageText)
         messageTextField.text = ""
+        sendMessageButtonLocked = false
+        sendMessageButton.isEnabled = false
+        sendMessageButton.setImage(#imageLiteral(resourceName: "SendIcon.pdf"), for: .normal)
+        changeButtonSize()
     }
     
     var messages = [Message]()
@@ -44,6 +49,7 @@ class ConversationViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        self.sendMessageButton.isEnabled = false
         
         msgService.addMessageListener { [weak self] (messages) in
             guard let messages = messages else { return }
@@ -80,6 +86,8 @@ class ConversationViewController: UIViewController {
                     
             })
         }
+        
+        self.messageTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     func tableViewScrollToBottom(animated: Bool) {
@@ -92,4 +100,33 @@ class ConversationViewController: UIViewController {
         }
         
     }
+    
+    func changeButtonSize() {
+        UIView.animate(withDuration: 0.25, delay: 0.0, options: [.curveEaseOut], animations: {
+            self.sendMessageButton.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: [.curveEaseOut], animations: {
+                self.sendMessageButton.transform = .identity
+            })
+        })
+    }
+    
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        if messageTextField.text!.isEmpty {
+                if (sendMessageButtonLocked == true) {
+                    sendMessageButtonLocked = false
+                    sendMessageButton.isEnabled = false
+                    changeButtonSize()
+                    sendMessageButton.setImage(#imageLiteral(resourceName: "SendIcon.pdf"), for: .normal)
+                }
+            } else {
+                if ( sendMessageButtonLocked == false) {
+                    sendMessageButtonLocked = true
+                    sendMessageButton.isEnabled = true
+                    changeButtonSize()
+                    self.sendMessageButton.setImage(#imageLiteral(resourceName: "SendIconEnabled"), for: .normal)
+                }
+            }
+    }
+
 }

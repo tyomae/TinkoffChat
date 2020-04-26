@@ -30,8 +30,8 @@ class ConversationsListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        self.navigationItem.backBarButtonItem?.tintColor = .black
-        title = "TinkoffChat"
+//        self.navigationItem.backBarButtonItem?.tintColor = .black
+//        title = "TinkoffChat"
         
         chService.addChannelListener { [weak self] (channels) in
             guard let channels = channels else { return }
@@ -55,6 +55,7 @@ class ConversationsListViewController: UIViewController {
                 self?.tableView.reloadData()
             }
         }
+    
     }
     
     private func sortChannels() {
