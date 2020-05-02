@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1130"
+   LastUpgradeVersion = "1140"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -35,6 +35,16 @@
                BlueprintIdentifier = "EE092C6A23F5C91500B30E08"
                BuildableName = "TinkoffChatTests.xctest"
                BlueprintName = "TinkoffChatTests"
+               ReferencedContainer = "container:TinkoffChat.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EE20A1C5245C83AB00A04EB0"
+               BuildableName = "TinkoffChatUITests1.xctest"
+               BlueprintName = "TinkoffChatUITests1"
                ReferencedContainer = "container:TinkoffChat.xcodeproj">
             </BuildableReference>
          </TestableReference>

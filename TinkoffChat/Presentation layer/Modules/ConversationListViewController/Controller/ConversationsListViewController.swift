@@ -12,6 +12,7 @@ import Firebase
 class ConversationsListViewController: UIViewController {
     
     let chService: ChannelServiceProtocol = ChannelService(coreDataStack: CoreDataStack(), conversationFetchRequester: ConversationFetchRequester())
+    let chSorter: IChannelSorter = ChannelSorter()
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -30,51 +31,21 @@ class ConversationsListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-//        self.navigationItem.backBarButtonItem?.tintColor = .black
-//        title = "TinkoffChat"
-        
         chService.addChannelListener { [weak self] (channels) in
-            guard let channels = channels else { return }
-            let date: Date = Date(timeIntervalSinceNow: -600)
-            self?.onlineChannels = channels.filter({ channel -> Bool in
-                if let lastActivity = channel.lastActivity {
-                    return lastActivity > date
-                }
-                return false
-            })
-            self?.historyChannels = channels.filter({ channel -> Bool in
-                if let lastActivity = channel.lastActivity {
-                    return lastActivity < date
-                }
-                return true
-            })
+            guard let channels = channels,
+                let self = self else { return }
             
-            self?.sortChannels()
+            self.onlineChannels = self.chSorter.sortByDate(channels, ascending: true)
+            self.historyChannels = self.chSorter.sortByDate(channels, ascending: false)
+            
+            self.onlineChannels = self.chSorter.sortByOnlineStatus(channels, ascending: true)
+            self.historyChannels = self.chSorter.sortByOnlineStatus(channels, ascending: false)
             
             DispatchQueue.main.async {
-                self?.tableView.reloadData()
+                self.tableView.reloadData()
             }
         }
     
-    }
-    
-    private func sortChannels() {
-        // Sort by date
-        onlineChannels.sort(by: { (channel1, channel2) -> Bool in
-            guard let lastActivity1 = channel1.lastActivity,
-                let lastActivity2 = channel2.lastActivity else { return true }
-            return lastActivity1 > lastActivity2
-        })
-        historyChannels.sort(by: { (channel1, channel2) -> Bool in
-            guard let lastActivity1 = channel1.lastActivity,
-                let lastActivity2 = channel2.lastActivity else { return true }
-            return lastActivity1 < lastActivity2
-        })
-        
-        // Sort by empty last activity
-        historyChannels.sort(by: { (channel1, channel2) -> Bool in
-            return channel1.lastActivity != nil || channel2.lastActivity != nil
-        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

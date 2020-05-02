@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023FFFEE32BE6EEFDE7DAC0F /* libPods-TinkoffChatTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F45619341C7DFD09117FDDF /* libPods-TinkoffChatTests.a */; };
 		B6308D2838B76E6A405A0D72 /* Pods_TinkoffChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626C647BF232694FEE0E5D14 /* Pods_TinkoffChat.framework */; };
 		EE0077CE2441C43800573CD5 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0077CC2441C43800573CD5 /* MessageService.swift */; };
 		EE0077CF2441C43800573CD5 /* ChannelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0077CD2441C43800573CD5 /* ChannelService.swift */; };
@@ -19,7 +20,11 @@
 		EE092C5D23F5C91500B30E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE092C5B23F5C91500B30E08 /* Main.storyboard */; };
 		EE092C6223F5C91500B30E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE092C6123F5C91500B30E08 /* Assets.xcassets */; };
 		EE092C6523F5C91500B30E08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE092C6323F5C91500B30E08 /* LaunchScreen.storyboard */; };
-		EE092C7023F5C91500B30E08 /* TinkoffChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE092C6F23F5C91500B30E08 /* TinkoffChatTests.swift */; };
+		EE20A1BF245C44DC00A04EB0 /* ChannelSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20A1BE245C44DC00A04EB0 /* ChannelSorter.swift */; };
+		EE20A1C1245C784900A04EB0 /* ChannelsSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20A1C0245C784900A04EB0 /* ChannelsSorterTests.swift */; };
+		EE20A1D0245D73ED00A04EB0 /* ChannelSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20A1BE245C44DC00A04EB0 /* ChannelSorter.swift */; };
+		EE20A1D3245D834E00A04EB0 /* MessageFirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20A1D2245D834E00A04EB0 /* MessageFirebaseModel.swift */; };
+		EE20A1D4245D845F00A04EB0 /* ChannelFirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46F5452440DBD700A94F27 /* ChannelFirebaseModel.swift */; };
 		EE2560892440D9A6005BEFEB /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE2560862440D9A6005BEFEB /* CoreDataModel.xcdatamodeld */; };
 		EE3F474A2449BC2F00D8C8DF /* LoaderImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3F47492449BC2F00D8C8DF /* LoaderImageViewController.swift */; };
 		EE42F346242F6A65006463FA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE42F345242F6A65006463FA /* CoreDataStack.swift */; };
@@ -36,7 +41,7 @@
 		EE46F5402440DBCD00A94F27 /* MessageeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46F5352440DBCD00A94F27 /* MessageeCell.swift */; };
 		EE46F5412440DBCD00A94F27 /* ConversationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE46F5362440DBCD00A94F27 /* ConversationCell.xib */; };
 		EE46F5422440DBCD00A94F27 /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46F5382440DBCD00A94F27 /* ConfigurableView.swift */; };
-		EE46F54D2440DBD700A94F27 /* FirebaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46F5452440DBD700A94F27 /* FirebaseModels.swift */; };
+		EE46F54D2440DBD700A94F27 /* ChannelFirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46F5452440DBD700A94F27 /* ChannelFirebaseModel.swift */; };
 		EE46F54E2440DBD700A94F27 /* OperationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46F5472440DBD700A94F27 /* OperationDataManager.swift */; };
 		EE46F54F2440DBD700A94F27 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46F5482440DBD700A94F27 /* DataManager.swift */; };
 		EE46F5502440DBD700A94F27 /* GCDDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE46F5492440DBD700A94F27 /* GCDDataManager.swift */; };
@@ -100,8 +105,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		45A5F462977F29405336BB96 /* Pods-TinkoffChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffChatTests.debug.xcconfig"; path = "Target Support Files/Pods-TinkoffChatTests/Pods-TinkoffChatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BBF7FF45E74C6AF18F211D0 /* Pods-TinkoffChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffChatTests.release.xcconfig"; path = "Target Support Files/Pods-TinkoffChatTests/Pods-TinkoffChatTests.release.xcconfig"; sourceTree = "<group>"; };
 		626C647BF232694FEE0E5D14 /* Pods_TinkoffChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinkoffChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B040B5712841FD06F6CD328 /* Pods-TinkoffChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffChat.debug.xcconfig"; path = "Target Support Files/Pods-TinkoffChat/Pods-TinkoffChat.debug.xcconfig"; sourceTree = "<group>"; };
+		8F45619341C7DFD09117FDDF /* libPods-TinkoffChatTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TinkoffChatTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64473E398CFD9BC79F48947 /* Pods-TinkoffChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffChat.release.xcconfig"; path = "Target Support Files/Pods-TinkoffChat/Pods-TinkoffChat.release.xcconfig"; sourceTree = "<group>"; };
 		EE0077CC2441C43800573CD5 /* MessageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		EE0077CD2441C43800573CD5 /* ChannelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelService.swift; sourceTree = "<group>"; };
@@ -117,8 +125,12 @@
 		EE092C6423F5C91500B30E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE092C6623F5C91500B30E08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE092C6B23F5C91500B30E08 /* TinkoffChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE092C6F23F5C91500B30E08 /* TinkoffChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffChatTests.swift; sourceTree = "<group>"; };
 		EE092C7123F5C91500B30E08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE20A1BE245C44DC00A04EB0 /* ChannelSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelSorter.swift; sourceTree = "<group>"; };
+		EE20A1C0245C784900A04EB0 /* ChannelsSorterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsSorterTests.swift; sourceTree = "<group>"; };
+		EE20A1C8245C83AB00A04EB0 /* TinkoffChatUITests1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffChatUITests1.swift; sourceTree = "<group>"; };
+		EE20A1CA245C83AB00A04EB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE20A1D2245D834E00A04EB0 /* MessageFirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFirebaseModel.swift; sourceTree = "<group>"; };
 		EE2560872440D9A6005BEFEB /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		EE2560882440D9A6005BEFEB /* CoreDataModel2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel2.xcdatamodel; sourceTree = "<group>"; };
 		EE3F47492449BC2F00D8C8DF /* LoaderImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderImageViewController.swift; sourceTree = "<group>"; };
@@ -136,7 +148,7 @@
 		EE46F5352440DBCD00A94F27 /* MessageeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageeCell.swift; sourceTree = "<group>"; };
 		EE46F5362440DBCD00A94F27 /* ConversationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationCell.xib; sourceTree = "<group>"; };
 		EE46F5382440DBCD00A94F27 /* ConfigurableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
-		EE46F5452440DBD700A94F27 /* FirebaseModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseModels.swift; sourceTree = "<group>"; };
+		EE46F5452440DBD700A94F27 /* ChannelFirebaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelFirebaseModel.swift; sourceTree = "<group>"; };
 		EE46F5472440DBD700A94F27 /* OperationDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationDataManager.swift; sourceTree = "<group>"; };
 		EE46F5482440DBD700A94F27 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		EE46F5492440DBD700A94F27 /* GCDDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDDataManager.swift; sourceTree = "<group>"; };
@@ -182,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				023FFFEE32BE6EEFDE7DAC0F /* libPods-TinkoffChatTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +213,8 @@
 			children = (
 				6B040B5712841FD06F6CD328 /* Pods-TinkoffChat.debug.xcconfig */,
 				B64473E398CFD9BC79F48947 /* Pods-TinkoffChat.release.xcconfig */,
+				45A5F462977F29405336BB96 /* Pods-TinkoffChatTests.debug.xcconfig */,
+				5BBF7FF45E74C6AF18F211D0 /* Pods-TinkoffChatTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -208,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				626C647BF232694FEE0E5D14 /* Pods_TinkoffChat.framework */,
+				8F45619341C7DFD09117FDDF /* libPods-TinkoffChatTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -229,6 +245,7 @@
 				EE092C5423F5C91500B30E08 /* TinkoffChat */,
 				EE092C6E23F5C91500B30E08 /* TinkoffChatTests */,
 				EEC1D79C2411174000CA961E /* TinkoffChat-iOS */,
+				EE20A1C7245C83AB00A04EB0 /* TinkoffChatUITests1 */,
 				EE092C5323F5C91500B30E08 /* Products */,
 				65BD4CF4260FB1E968154BD6 /* Pods */,
 				866A84FAC57B0D6099F72C05 /* Frameworks */,
@@ -260,10 +277,19 @@
 		EE092C6E23F5C91500B30E08 /* TinkoffChatTests */ = {
 			isa = PBXGroup;
 			children = (
-				EE092C6F23F5C91500B30E08 /* TinkoffChatTests.swift */,
+				EE20A1C0245C784900A04EB0 /* ChannelsSorterTests.swift */,
 				EE092C7123F5C91500B30E08 /* Info.plist */,
 			);
 			path = TinkoffChatTests;
+			sourceTree = "<group>";
+		};
+		EE20A1C7245C83AB00A04EB0 /* TinkoffChatUITests1 */ = {
+			isa = PBXGroup;
+			children = (
+				EE20A1C8245C83AB00A04EB0 /* TinkoffChatUITests1.swift */,
+				EE20A1CA245C83AB00A04EB0 /* Info.plist */,
+			);
+			path = TinkoffChatUITests1;
 			sourceTree = "<group>";
 		};
 		EE3F47482449BC0100D8C8DF /* LoaderImageViewController */ = {
@@ -319,7 +345,8 @@
 				EE7A79E924432CEC00FF66E0 /* Managers */,
 				EE46F5382440DBCD00A94F27 /* ConfigurableView.swift */,
 				EE42F345242F6A65006463FA /* CoreDataStack.swift */,
-				EE46F5452440DBD700A94F27 /* FirebaseModels.swift */,
+				EE46F5452440DBD700A94F27 /* ChannelFirebaseModel.swift */,
+				EE20A1D2245D834E00A04EB0 /* MessageFirebaseModel.swift */,
 				EE46F54A2440DBD700A94F27 /* AsyncOperation.swift */,
 			);
 			path = CoreComponents;
@@ -440,6 +467,7 @@
 				EE46F5462440DBD700A94F27 /* DataManagers */,
 				EE0077CD2441C43800573CD5 /* ChannelService.swift */,
 				EE0077CC2441C43800573CD5 /* MessageService.swift */,
+				EE20A1BE245C44DC00A04EB0 /* ChannelSorter.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -601,9 +629,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE092C7723F5C91500B30E08 /* Build configuration list for PBXNativeTarget "TinkoffChatTests" */;
 			buildPhases = (
+				6FC1ACE1E047478A14262C02 /* [CP] Check Pods Manifest.lock */,
 				EE092C6723F5C91500B30E08 /* Sources */,
 				EE092C6823F5C91500B30E08 /* Frameworks */,
 				EE092C6923F5C91500B30E08 /* Resources */,
+				BDD9450ED6D6D0632A314F04 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -639,7 +669,7 @@
 		EE092C4A23F5C91500B30E08 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Artem Emelianov";
 				TargetAttributes = {
@@ -728,6 +758,45 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6FC1ACE1E047478A14262C02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinkoffChatTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDD9450ED6D6D0632A314F04 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinkoffChatTests/Pods-TinkoffChatTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinkoffChatTests/Pods-TinkoffChatTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TinkoffChatTests/Pods-TinkoffChatTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F7E0A88BB353B0DACB811ACC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -766,6 +835,7 @@
 				EEB5B5B32449EB4A0079491A /* RequestConfiguration.swift in Sources */,
 				EEB5B5AA2449E3BF0079491A /* LoaderImageVCDataSource.swift in Sources */,
 				EEB5B5B72449EBF40079491A /* ImageRequest.swift in Sources */,
+				EE20A1D3245D834E00A04EB0 /* MessageFirebaseModel.swift in Sources */,
 				EEB5B5B52449EBA60079491A /* ImageRequestStorageParser.swift in Sources */,
 				EEB5B5B02449E4530079491A /* LoaderImageVCFlowLayout.swift in Sources */,
 				EE46F54F2440DBD700A94F27 /* DataManager.swift in Sources */,
@@ -795,7 +865,8 @@
 				EE46F53B2440DBCD00A94F27 /* ConversationsListViewController.swift in Sources */,
 				EEE269062437ADF700A42C68 /* ConversationFetchRequester.swift in Sources */,
 				EE0077DC24421A5A00573CD5 /* KeyboardManager.swift in Sources */,
-				EE46F54D2440DBD700A94F27 /* FirebaseModels.swift in Sources */,
+				EE20A1BF245C44DC00A04EB0 /* ChannelSorter.swift in Sources */,
+				EE46F54D2440DBD700A94F27 /* ChannelFirebaseModel.swift in Sources */,
 				EE7A79ED2443704200FF66E0 /* ServiceAssembly.swift in Sources */,
 				EE42F348242F7283006463FA /* AppUser.swift in Sources */,
 				EEB5B5C62449EEAC0079491A /* LoaderImagerInteractor.swift in Sources */,
@@ -807,7 +878,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE092C7023F5C91500B30E08 /* TinkoffChatTests.swift in Sources */,
+				EE20A1D0245D73ED00A04EB0 /* ChannelSorter.swift in Sources */,
+				EE20A1C1245C784900A04EB0 /* ChannelsSorterTests.swift in Sources */,
+				EE20A1D4245D845F00A04EB0 /* ChannelFirebaseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1010,11 +1083,13 @@
 		};
 		EE092C7823F5C91500B30E08 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45A5F462977F29405336BB96 /* Pods-TinkoffChatTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DT65SS5ZB;
+				HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/Firebase/Core/Sources\"";
 				INFOPLIST_FILE = TinkoffChatTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1032,11 +1107,13 @@
 		};
 		EE092C7923F5C91500B30E08 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BBF7FF45E74C6AF18F211D0 /* Pods-TinkoffChatTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DT65SS5ZB;
+				HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/Firebase/Core/Sources\"";
 				INFOPLIST_FILE = TinkoffChatTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
